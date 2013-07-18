@@ -1,9 +1,9 @@
-package Graphic.Marker;
+package graphic.marker;
 
-import Graphic.ZoomManager;
-import Objects.Point;
-import Static.Constants;
-import Static.Helper;
+import common.Constants;
+import common.Helper;
+import graphic.ZoomManager;
+import objects.Point;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;

@@ -1,6 +1,6 @@
-package Graphic.Marker;
+package graphic.marker;
 
-import Graphic.ZoomManager;
+import graphic.ZoomManager;
 
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;

@@ -1,7 +1,4 @@
-package Static;
-
-import java.net.MalformedURLException;
-import java.net.URL;
+package common;
 
 /**
  * Created with IntelliJ IDEA.
@@ -19,8 +16,8 @@ public class Helper {
         int delta_x = x1 - x2;
         int delta_y = y1 - y2;
 
-        int distance = (int)Math.sqrt(Math.pow(delta_x, 2) + Math.pow(delta_y, 2));
+        int distance = (int) Math.sqrt(Math.pow(delta_x, 2) + Math.pow(delta_y, 2));
 
-        return  Constants.MIN_DISTANCE <= distance;
+        return Constants.MIN_DISTANCE <= distance;
     }
 }

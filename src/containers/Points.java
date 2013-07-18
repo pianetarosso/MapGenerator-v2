@@ -1,8 +1,9 @@
-package Containers;
+package containers;
+
+import common.Helper;
+import objects.Point;
 
 import java.util.ArrayList;
-import Objects.Point;
-import Static.Helper;
 
 /**
  * Created with IntelliJ IDEA.
@@ -28,10 +29,10 @@ public class Points extends ArrayList<Point> {
 
     public Point findNearest(int x, int y, int zoom) {
 
-        for (Point p: this) {
+        for (Point p : this) {
 
-              if (Helper.testDistance(x, y, p.getX(), p.getY(), zoom))
-                  return p;
+            if (Helper.testDistance(x, y, p.getX(), p.getY(), zoom))
+                return p;
         }
         return null;
     }

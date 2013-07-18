@@ -1,10 +1,9 @@
 package main;
 
 
-import Graphic.JPanelImmagine;
-import Objects.Floor;
-import Static.Constants;
-import Static.LoadImages;
+import common.LoadImages;
+import graphic.JPanelImmagine;
+import objects.Floor;
 
 import javax.swing.*;
 import java.awt.*;

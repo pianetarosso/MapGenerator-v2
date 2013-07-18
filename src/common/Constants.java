@@ -1,4 +1,4 @@
-package Static;
+package common;
 
 import java.awt.*;
 
@@ -38,8 +38,6 @@ public class Constants {
     public static final Color BACKGROUND = Color.black;
 
 
-
-
     // COLORI //////////////////////////////////////////////////////////////
 
     // Sfondo
@@ -67,7 +65,6 @@ public class Constants {
 
     // diametro dell'oggetto
     public static final int DIAMETER = 10;
-
 
 
     ////////////////////////////////////////////////////////////////////////////

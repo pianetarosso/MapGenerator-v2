@@ -1,10 +1,8 @@
-package Graphic;
+package graphic;
 
-import Graphic.JPanelImmagine;
-import Graphic.MyJPanel;
-import Objects.Floor;
-import Static.Constants;
+import common.Constants;
 import main.CommunicationWithJS;
+import objects.Floor;
 
 import java.awt.*;
 import java.awt.event.MouseEvent;
@@ -40,7 +38,7 @@ public class JPanelImmagine extends MyJPanel implements MouseListener, MouseMoti
 
         switch (type) {
 
-            case "mouseDragged" : {
+            case "mouseDragged": {
 
                 // trascinamento dell'immagine
                 if (zoom.isPointOnImage(arg0.getPoint()))
@@ -48,7 +46,7 @@ public class JPanelImmagine extends MyJPanel implements MouseListener, MouseMoti
                 break;
             }
 
-            case "mousePressed" : {
+            case "mousePressed": {
 
                 // inizio del trascinamento
                 zoom.enableZoom(false);
@@ -57,7 +55,7 @@ public class JPanelImmagine extends MyJPanel implements MouseListener, MouseMoti
                 break;
             }
 
-            case "mouseReleased" : {
+            case "mouseReleased": {
 
                 // fine del trascinamento
                 zoom.enableZoom(true);
@@ -80,7 +78,7 @@ public class JPanelImmagine extends MyJPanel implements MouseListener, MouseMoti
 
         switch (type) {
 
-            case "mouseClicked" : {
+            case "mouseClicked": {
 
                 // individuo la path più vicina cliccata
                 Point point = arg0.getPoint();
@@ -89,7 +87,7 @@ public class JPanelImmagine extends MyJPanel implements MouseListener, MouseMoti
 
                 if (paths.selectedPath != null) {
                     paths.cwjs.deletePath();
-                    if(this.debug)
+                    if (this.debug)
                         delete(0, "path");
                     else
                         this.stopAll(true);
@@ -98,7 +96,7 @@ public class JPanelImmagine extends MyJPanel implements MouseListener, MouseMoti
                 break;
             }
 
-            case "mousePressed" : {
+            case "mousePressed": {
 
                 // inizio il disegno di una path
                 if (paths.drawingPath == null) {
@@ -108,7 +106,7 @@ public class JPanelImmagine extends MyJPanel implements MouseListener, MouseMoti
                 break;
             }
 
-            case "mouseReleased" : {
+            case "mouseReleased": {
 
                 // termino il disegno di una path
                 if (paths.drawingPath != null)
@@ -118,7 +116,7 @@ public class JPanelImmagine extends MyJPanel implements MouseListener, MouseMoti
                 break;
             }
 
-            case "mouseDragged" : {
+            case "mouseDragged": {
 
                 // continuo a disegnare una path
                 if (paths.drawingPath != null)
@@ -161,7 +159,9 @@ public class JPanelImmagine extends MyJPanel implements MouseListener, MouseMoti
     }
 
     @Override
-    public void mouseMoved(MouseEvent arg0) {}
+    public void mouseMoved(MouseEvent arg0) {
+    }
+
     @Override
 
     public void mouseClicked(MouseEvent arg0) {
@@ -173,8 +173,11 @@ public class JPanelImmagine extends MyJPanel implements MouseListener, MouseMoti
     }
 
     @Override
-    public void mouseEntered(MouseEvent arg0) {}
+    public void mouseEntered(MouseEvent arg0) {
+    }
+
     @Override
-    public void mouseExited(MouseEvent arg0) {}
+    public void mouseExited(MouseEvent arg0) {
+    }
 
 }

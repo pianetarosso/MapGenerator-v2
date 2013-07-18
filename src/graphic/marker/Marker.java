@@ -1,4 +1,4 @@
-package Graphic.Marker;
+package graphic.marker;
 
 import gestore_immagini.JPanelImmagine;
 import gestore_immagini.ZoomManager;

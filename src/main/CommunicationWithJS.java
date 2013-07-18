@@ -1,9 +1,9 @@
 package main;
 
-import Objects.Floor;
-import Static.Constants;
+import common.Constants;
 import netscape.javascript.JSException;
 import netscape.javascript.JSObject;
+import objects.Floor;
 
 import java.applet.Applet;
 import java.net.MalformedURLException;

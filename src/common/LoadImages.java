@@ -1,8 +1,8 @@
-package Static;
+package common;
 
-import Objects.Floor;
 import main.CommunicationWithJS;
 import main.MapGenerator;
+import objects.Floor;
 
 import java.io.IOException;
 
@@ -37,7 +37,7 @@ public class LoadImages implements Runnable {
     public void run() {
         try {
 
-            for (int i= 0; i < floors.length; i++) {
+            for (int i = 0; i < floors.length; i++) {
                 Floor f = floors[i];
                 f.loadImage();
             }
@@ -45,7 +45,8 @@ public class LoadImages implements Runnable {
             mg.setFloor(floors[0].getFloor());
             mg.setOperation(Constants.TYPE_MARKER);
             cwjs.enableInput();
-        } catch (IOException e) {}
+        } catch (IOException e) {
+        }
 
     }
 

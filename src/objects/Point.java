@@ -1,6 +1,6 @@
-package Objects;
+package objects;
 
-import Graphic.ZoomManager;
+import graphic.ZoomManager;
 
 /**
  * Created with IntelliJ IDEA.

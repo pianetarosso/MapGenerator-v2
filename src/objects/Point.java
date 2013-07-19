@@ -1,5 +1,7 @@
 package objects;
 
+import common.Constants;
+import common.Helper;
 import graphic.ZoomManager;
 
 /**
@@ -13,9 +15,11 @@ public class Point {
 
     private int id;
     private double x, y;
-    private int floor;
+    private Floor floor;
     private String RFID;
-    private boolean access;
+    private boolean access = false;
+
+    private boolean valid = false;
 
     private ZoomManager zoomManager;
 
@@ -24,7 +28,7 @@ public class Point {
         return id;
     }
 
-    public Point(int id, double x, double y, int floor, ZoomManager zoomManager) {
+    public Point(int id, double x, double y, Floor floor, ZoomManager zoomManager) {
         this.id = id;
 
         this.x = zoomManager.getRealPosition_X(x);
@@ -60,11 +64,11 @@ public class Point {
         this.y = zoomManager.getRealPosition_Y(y);
     }
 
-    public int getFloor() {
+    public Floor getFloor() {
         return floor;
     }
 
-    public void setFloor(int floor) {
+    public void setFloor(Floor floor) {
         this.floor = floor;
     }
 
@@ -82,5 +86,26 @@ public class Point {
 
     public void setAccess(boolean access) {
         this.access = access;
+
+        valid = false || access;
+    }
+
+    // testo se i punti sono troppo vicini tra loro (nel contesto scalato, NON reale)
+    public boolean isNear(Point p) {
+
+        // se TRUE sono troppo vicini
+        return Helper.testDistance(this, p, Constants.MIN_MARKER_DISTANCE);
+    }
+
+    public java.awt.Point getPanelPosition() {
+        return new java.awt.Point(getPanelPosition_X(), getPanelPosition_Y());
+    }
+
+    public boolean isValid() {
+        return valid;
+    }
+
+    public void resetValidation() {
+        valid = false || access;
     }
 }

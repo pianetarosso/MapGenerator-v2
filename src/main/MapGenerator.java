@@ -1,8 +1,9 @@
 package main;
 
 
-import common.LoadImages;
-import graphic.JPanelImmagine;
+import communication.LoadImages;
+import communication.WithJS;
+import graphic.jpanel.JPanelImmagine;
 import objects.Floor;
 
 import javax.swing.*;
@@ -22,12 +23,12 @@ public class MapGenerator extends JApplet {
     // VARIABILI
 
     private Floor[] floors;
-    private CommunicationWithJS cwjs;
+    private WithJS cwjs;
     private boolean debug = false;
 
     public void start() {
 
-        cwjs = new CommunicationWithJS(this, debug);
+        cwjs = new WithJS(this, debug);
         floors = cwjs.parseFloors(this.getCodeBase());
 
         new LoadImages(floors, cwjs, this);

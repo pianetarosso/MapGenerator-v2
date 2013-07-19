@@ -9,16 +9,26 @@ package objects;
  */
 public class Path {
 
-    private Point p, a;
+    protected Point p;
+    protected Point a;
 
-    private String elevator;
+    public int getId() {
+        return id;
+    }
 
-    private String stair;
+    protected int id;
+
+    private boolean elevator;
+
+    private boolean stair;
+
+    private String identifier = "";
 
 
-    public Path(Point p) {
+    public Path(Point p, int id) {
         this.p = p;
         this.a = p;
+        this.id = id;
     }
 
     public Point getP() {
@@ -37,19 +47,27 @@ public class Path {
         this.a = a;
     }
 
-    public String getElevator() {
+    public boolean isElevator() {
         return elevator;
     }
 
     public void setElevator(String elevator) {
-        this.elevator = elevator;
+        this.identifier = elevator;
+        this.elevator = true;
+        this.stair = false;
     }
 
-    public String getStair() {
+    public boolean isStair() {
         return stair;
     }
 
     public void setStair(String stair) {
-        this.stair = stair;
+        this.identifier = stair;
+        this.stair = true;
+        this.elevator = false;
+    }
+
+    public String getIdentifier() {
+        return identifier;
     }
 }

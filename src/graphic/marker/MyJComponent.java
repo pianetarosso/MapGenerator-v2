@@ -1,8 +1,9 @@
 package graphic.marker;
 
 import common.Constants;
-import common.Helper;
 import graphic.ZoomManager;
+import graphic.jpanel.JPanelImmagine;
+import objects.Floor;
 import objects.Point;
 
 import javax.swing.*;
@@ -23,29 +24,24 @@ public abstract class MyJComponent extends JComponent {
     // variabile per il "click"
     protected boolean clicked = false;
 
-    // variabile che abilita il click e il trascinamento di un marker
-    protected boolean stopped = false;
+    protected JPanelImmagine jPanelImmagine;
 
     protected Point point;
 
 
-    // VALIDAZIONE ///////////////////////////////////////////////////////
-
-    // è valido SEMPRE => E' un ingresso
-    public boolean valido = false;
-
-    // valore acquisito con la connessione di più path
-    public boolean validated = false;
-
-    ///////////////////////////////////////////////////////////////////////
-
-
     // COSTRUTTORE //
-    protected MyJComponent(double x, double y, ZoomManager zoomManager, int id, int floor) {
+    protected MyJComponent(double x,
+                           double y,
+                           ZoomManager zoomManager,
+                           int id,
+                           Floor floor,
+                           JPanelImmagine jPanelImmagine) {
 
         super();
 
         point = new Point(id, x, y, floor, zoomManager);
+
+        this.jPanelImmagine = jPanelImmagine;
 
         // abilito i metodi di input
         enableInputMethods(true);
@@ -64,20 +60,12 @@ public abstract class MyJComponent extends JComponent {
     // funzione per impostare la POSIZIONE SULL'IMMAGINE
     public void setBounds() {
 
-        setBounds(point.getPanelPosition_X() - Constants.DIAMETER / 2, point.getPanelPosition_Y() - Constants.DIAMETER / 2,
+        setBounds(point.getPanelPosition_X() - Constants.DIAMETER / 2,
+                point.getPanelPosition_Y() - Constants.DIAMETER / 2,
                 Constants.DIAMETER, Constants.DIAMETER);
     }
 
     // METODI VARI //
-
-
-    // testo se i punti sono troppo vicini tra loro (nel contesto scalato, NON reale)
-    public boolean testNear(Point p) {
-
-        // se TRUE sono troppo vicini
-        return Helper.testDistance(point.getPanelPosition_X(), point.getPanelPosition_Y(),
-                p.getPanelPosition_X(), p.getPanelPosition_Y());
-    }
 
     public void setCoordinates(double x, double y) {
         point.setX(x);
@@ -92,6 +80,15 @@ public abstract class MyJComponent extends JComponent {
 
         super.paintComponent(g);
 
+        if (point.getFloor() != jPanelImmagine.getFloor()) {
+            this.setVisible(false);
+            this.setEnabled(false);
+            return;
+        }
+
+        this.setVisible(true);
+        this.setEnabled(true);
+
         // abilito l'anti-aliasing
         Graphics2D antiAlias = (Graphics2D) g;
         antiAlias.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
@@ -102,13 +99,13 @@ public abstract class MyJComponent extends JComponent {
 
         Color designedColor = Constants.NOT_VALIDATED_COLOR;
 
-        if (valido || validated)
+        if (point.isValid())
             designedColor = Constants.VALIDATED_COLOR;
 
         g.setColor(designedColor);
 
         // disegno il cerchio della dimensione predisposta
-        if (moveMarker && !stopped) {
+        if (moveMarker && jPanelImmagine.isMarkerType()) {
 
             // "costuisco" un colore uguale a quello designato, ma più trasparente
             Color trans = new Color(
@@ -125,7 +122,7 @@ public abstract class MyJComponent extends JComponent {
 
 
         // gestisco la selezione
-        if (clicked || (mouseEntered && !stopped))
+        if ((clicked || mouseEntered) && jPanelImmagine.isMarkerType())
             g.setColor(Constants.SELECTED_COLOR);
         else
             g.setColor(Constants.NOT_SELECTED_COLOR);
@@ -138,4 +135,7 @@ public abstract class MyJComponent extends JComponent {
     }
 
 
+    public Point getPoint() {
+        return point;
+    }
 }

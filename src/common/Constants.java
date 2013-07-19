@@ -14,7 +14,6 @@ public class Constants {
     public static final String GET_FLOORS = "getFloors();";
     public static final String NUMERO_DI_PIANO = "numero_di_piano";
     public static final String LINK = "immagine";
-    public static final String BEARING = "bearing";
     public static final String ID = "id";
 
     public static final String NEW_MARKER = "createNewMarker";
@@ -26,7 +25,9 @@ public class Constants {
     public static final String DELETE_PATH = "deletePath()";
     public static final String IS_VALID = "isValid";
 
-    public static final int MIN_DISTANCE = 17;
+    public static final int MIN_MARKER_DISTANCE = 17;
+
+    public static final int MIN_PATH_DISTANCE = 10;
 
     // incremento massimo dello zoom, a partire dallo zoom minimo
     public static final double MAX_ZOOM_INCREMENT = 1.0;
@@ -67,10 +68,19 @@ public class Constants {
     public static final int DIAMETER = 10;
 
 
+    public static final double MAX_M_DIFFERENCE = 0.1;
+
     ////////////////////////////////////////////////////////////////////////////
 
     public static final String TYPE_MARKER = "marker";
     public static final String TYPE_PATH = "path";
+
+    public static final Color VALIDATED_PATH_COLOR = Color.green;
+    public static final Color NOT_VALIDATED_PATH_COLOR = Color.red;
+    public static final Color SELECTED_PATH_COLOR = Color.yellow;
+
+    public static final int SPESSORE = 2;
+    public static final int MINIMUM_PATH_LENGTH = 10;
 
     public static final String TEST_URL1 = "http://127.0.0.1:8000/media/floors/IMG_20111009_172117_3.jpg";
     public static final String TEST_URL2 = "http://127.0.0.1:8000/media/floors/IMG_20111009_171138_9.jpg";

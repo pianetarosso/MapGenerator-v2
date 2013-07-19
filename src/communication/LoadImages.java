@@ -1,6 +1,6 @@
-package common;
+package communication;
 
-import main.CommunicationWithJS;
+import common.Constants;
 import main.MapGenerator;
 import objects.Floor;
 
@@ -17,11 +17,11 @@ import java.io.IOException;
 // DEI METODI DI INPUT DELLA PAGINA
 public class LoadImages implements Runnable {
 
-    private final CommunicationWithJS cwjs;
+    private final WithJS cwjs;
     private Floor[] floors;
     private final MapGenerator mg;
 
-    public LoadImages(Floor[] floors, CommunicationWithJS cwjs, MapGenerator mg) {
+    public LoadImages(Floor[] floors, WithJS cwjs, MapGenerator mg) {
 
         this.floors = floors;
         this.cwjs = cwjs;

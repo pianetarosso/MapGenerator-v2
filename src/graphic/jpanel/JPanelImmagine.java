@@ -1,7 +1,7 @@
-package graphic;
+package graphic.jpanel;
 
 import common.Constants;
-import main.CommunicationWithJS;
+import communication.WithJS;
 import objects.Floor;
 
 import java.awt.*;
@@ -19,7 +19,7 @@ import java.awt.event.MouseMotionListener;
 public class JPanelImmagine extends MyJPanel implements MouseListener, MouseMotionListener {
 
 
-    public JPanelImmagine(Floor[] floors, CommunicationWithJS cwjs, boolean debug) {
+    public JPanelImmagine(Floor[] floors, WithJS cwjs, boolean debug) {
 
         super(floors, cwjs, debug);
 
@@ -180,4 +180,40 @@ public class JPanelImmagine extends MyJPanel implements MouseListener, MouseMoti
     public void mouseExited(MouseEvent arg0) {
     }
 
+
+    // funzione per la gestione del listener sui markers
+    private void MarkerListener(MouseEvent arg0) {
+        if (zoomManager.isPointOnImage(arg0.getPoint()) && (floor != null)) {
+
+            MarkerMap markers = floor.markers;
+            Marker new_m = markers.addMarker(arg0.getPoint());
+
+            if (new_m != null) {
+
+                // fermo TUTTO (zoom, movimento e listener)
+                if (!markers.withJS.debug)
+                    this.stopAll(true);
+
+                // aggiungo l'oggetto al JPanel principale
+                this.add(new_m);
+
+                // imposto la posizione dell'oggetto sul JPanel
+                new_m.setBounds();
+
+                new_m.setVisible(true);
+                new_m.setEnabled(true);
+
+                markers.setMarkerSelected(new_m.id);
+
+                this.updatePanel();
+
+                markers.withJS.sendNewMarker(new_m, floor.getFloor());
+
+                if (this.debug && (markers.size() > 4)) {
+                    this.setDrawOperationType(Constants.TYPE_PATH);
+                    markers.get(0).valido = true;
+                }
+            }
+        }
+    }
 }

@@ -51,17 +51,17 @@ public class ZoomManager {
     // /////////////////////////////////////////////////////////////////////////
 
     // costruttore
-    protected ZoomManager(JPanel imagebox) {
+    public ZoomManager(JPanel imagebox) {
         setJPanelObject(imagebox);
     }
 
     // abilita / disabilita lo zoom
-    protected void disableZoom(boolean disable) {
+    public void disableZoom(boolean disable) {
         this.zoom_enabled = !disable;
     }
 
     // imposto l'immagine
-    protected void setImage(BufferedImage image) {
+    public void setImage(BufferedImage image) {
         this.image = image;
         image_w = image.getWidth();
         image_h = image.getHeight();
@@ -72,7 +72,7 @@ public class ZoomManager {
     // funzione per il calcolo dello zoom e il posizionamento centrato
     // dell'immagine
     // durante il DRAW
-    protected AffineTransform scaleBufferedImage() {
+    public AffineTransform scaleBufferedImage() {
 
         AffineTransform at = null;
 

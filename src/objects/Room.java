@@ -9,7 +9,11 @@ package objects;
  */
 public class Room {
 
-    private Point p;
+    private int id;
+
+    public int getId() {
+        return id;
+    }
 
     private String name;
     private String people;
@@ -17,17 +21,10 @@ public class Room {
     private String link;
 
 
-    public Room(String name) {
+    public Room(String name, int id) {
 
         this.name = name;
-    }
-
-    public Point getP() {
-        return p;
-    }
-
-    public void setP(Point p) {
-        this.p = p;
+        this.id = id;
     }
 
     public String getName() {

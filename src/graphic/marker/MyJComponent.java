@@ -1,9 +1,7 @@
 package graphic.marker;
 
 import common.Constants;
-import graphic.ZoomManager;
 import graphic.jpanel.JPanelImmagine;
-import objects.Floor;
 import objects.Point;
 
 import javax.swing.*;
@@ -21,7 +19,16 @@ public abstract class MyJComponent extends JComponent {
     // variabile per il trascinamento del marker
     protected boolean moveMarker = false;
 
+    public boolean isClicked() {
+        return clicked;
+    }
+
     // variabile per il "click"
+
+    public void setClicked(boolean clicked) {
+        this.clicked = clicked;
+    }
+
     protected boolean clicked = false;
 
     protected JPanelImmagine jPanelImmagine;
@@ -30,16 +37,12 @@ public abstract class MyJComponent extends JComponent {
 
 
     // COSTRUTTORE //
-    protected MyJComponent(double x,
-                           double y,
-                           ZoomManager zoomManager,
-                           int id,
-                           Floor floor,
+    protected MyJComponent(Point point,
                            JPanelImmagine jPanelImmagine) {
 
         super();
 
-        point = new Point(id, x, y, floor, zoomManager);
+        this.point = point;
 
         this.jPanelImmagine = jPanelImmagine;
 

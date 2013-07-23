@@ -150,7 +150,7 @@ public class ZoomManager {
     // listener all'oggetto superiore per verificare se è avvenuta una modifica
     // alla dimensione
     // della finestra
-    protected void changeSizeListener(Container up) {
+    public void changeSizeListener(Container up) {
         up.addComponentListener(new ComponentListener() {
 
             @Override

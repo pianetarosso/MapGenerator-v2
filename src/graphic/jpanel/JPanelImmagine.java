@@ -2,6 +2,7 @@ package graphic.jpanel;
 
 import common.Constants;
 import communication.WithJS;
+import graphic.marker.Marker;
 import objects.Floor;
 
 import java.awt.*;
@@ -19,9 +20,9 @@ import java.awt.event.MouseMotionListener;
 public class JPanelImmagine extends MyJPanel implements MouseListener, MouseMotionListener {
 
 
-    public JPanelImmagine(Floor[] floors, WithJS cwjs, boolean debug) {
+    public JPanelImmagine(Floor[] floors, WithJS cwjs) {
 
-        super(floors, cwjs, debug);
+        super(floors, cwjs);
 
         // aggiungo i listeners
         addMouseListener(this);
@@ -30,102 +31,50 @@ public class JPanelImmagine extends MyJPanel implements MouseListener, MouseMoti
 
     // rendo evidente il costruttore del listener per il ridimensionamento
     public void addResizeListener(Container cp) {
-        zoom.changeSizeListener(cp);
+        zoomManager.changeSizeListener(cp);
     }
-
-    // funzione **UNICA** per la gestione del movimento dell'immagine nei listener
-    private void mouseMovement(MouseEvent arg0, String type) {
-
-        switch (type) {
-
-            case "mouseDragged": {
-
-                // trascinamento dell'immagine
-                if (zoom.isPointOnImage(arg0.getPoint()))
-                    move.moveImage(arg0);
-                break;
-            }
-
-            case "mousePressed": {
-
-                // inizio del trascinamento
-                zoom.enableZoom(false);
-                if (zoom.isPointOnImage(arg0.getPoint()))
-                    move.setOriginPoint(arg0);
-                break;
-            }
-
-            case "mouseReleased": {
-
-                // fine del trascinamento
-                zoom.enableZoom(true);
-                if (zoom.isPointOnImage(arg0.getPoint()))
-                    move.setOriginPoint(null);
-                break;
-            }
-        }
-
-        arg0.consume();
-    }
-
 
     private void pathListener(MouseEvent arg0, String type) {
 
-        PathArrayList paths = selected_floor.paths;
-
-        if (!zoom.isPointOnImage(arg0.getPoint()))
+        if (!zoomManager.isPointOnImage(arg0.getPoint()))
             return;
 
-        switch (type) {
 
-            case "mouseClicked": {
+        if (type == Constants.mouseClicked) {
 
-                // individuo la path più vicina cliccata
-                Point point = arg0.getPoint();
-                paths.drawingPath = null;
-                paths.selectedPath = CustomPoint.findNearestPath(point, paths, zoom);
+            // individuo la path più vicina cliccata
+            paths.drawingPath = null;
 
-                if (paths.selectedPath != null) {
-                    paths.cwjs.deletePath();
-                    if (this.debug)
-                        delete(0, "path");
-                    else
-                        this.stopAll(true);
-                }
+            if (paths.setSelectedPath(createPoint(arg0))) {
+                this.stopAll(true);
+                withJS.sendPath();
                 this.updatePanel();
-                break;
             }
 
-            case "mousePressed": {
+        } else if (type == Constants.mousePressed) {
 
-                // inizio il disegno di una path
-                if (paths.drawingPath == null) {
-                    paths.addPath(arg0.getPoint());
-                    paths.selectedPath = null;
-                }
-                break;
+            // inizio il disegno di una path
+            if (paths.drawingPath == null) {
+                paths.setSelectedPath(null);
+                paths.setDrawingPath(createPoint(arg0), points);
             }
 
-            case "mouseReleased": {
+        } else if (type == Constants.mouseReleased) {
 
-                // termino il disegno di una path
-                if (paths.drawingPath != null)
-                    paths.saveNewPath(arg0.getPoint());
-                if (paths.cwjs.debug && (paths.size() > 5))
-                    this.delete(0, "marker");
-                break;
-            }
+            // termino il disegno di una path
+            if (paths.drawingPath != null)
+                paths.saveDrawingPath(createPoint(arg0), points);
 
-            case "mouseDragged": {
+        } else if (type == Constants.mouseDragged) {
 
-                // continuo a disegnare una path
-                if (paths.drawingPath != null)
-                    paths.drawingPath(arg0.getPoint());
-                else
-                    paths.drawingPath = null;
-                break;
-            }
+            // continuo a disegnare una path
+            if (paths.drawingPath != null)
+                paths.updateDrawingPath(createPoint(arg0));
+            else
+                paths.drawingPath = null;
+
         }
+
 
         arg0.consume();
     }
@@ -134,28 +83,25 @@ public class JPanelImmagine extends MyJPanel implements MouseListener, MouseMoti
     @Override
     public void mouseDragged(MouseEvent arg0) {
 
-        if (type == Constants.TYPE_PATH)
-            pathListener(arg0, "mouseDragged");
-        else
-            mouseMovement(arg0, "mouseDragged");
+        if (isPathType())
+            pathListener(arg0, Constants.mouseDragged);
+
     }
 
     @Override
     public void mousePressed(MouseEvent arg0) {
 
-        if (type == Constants.TYPE_PATH)
-            pathListener(arg0, "mousePressed");
-        else
-            mouseMovement(arg0, "mousePressed");
+        if (isPathType())
+            pathListener(arg0, Constants.mousePressed);
+
     }
 
     @Override
     public void mouseReleased(MouseEvent arg0) {
 
-        if (type == Constants.TYPE_PATH)
-            pathListener(arg0, "mouseReleased");
-        else
-            mouseMovement(arg0, "mouseReleased");
+        if (isPathType())
+            pathListener(arg0, Constants.mouseReleased);
+
     }
 
     @Override
@@ -166,10 +112,10 @@ public class JPanelImmagine extends MyJPanel implements MouseListener, MouseMoti
 
     public void mouseClicked(MouseEvent arg0) {
 
-        if (type == Constants.TYPE_MARKER)
+        if (isMarkerType())
             MarkerListener(arg0);
-        else if (type == Constants.TYPE_PATH)
-            pathListener(arg0, "mouseClicked");
+        else if (isPathType())
+            pathListener(arg0, Constants.mouseClicked);
     }
 
     @Override
@@ -180,40 +126,77 @@ public class JPanelImmagine extends MyJPanel implements MouseListener, MouseMoti
     public void mouseExited(MouseEvent arg0) {
     }
 
+    private objects.Point createPoint(MouseEvent arg0) {
+        return new objects.Point(getId(), arg0.getX(), arg0.getY(), floor, zoomManager);
+    }
+
+    public void deleteMarker() {
+
+        // cancello il punto dai marker
+        markers.delete(paths, points, this);
+    }
 
     // funzione per la gestione del listener sui markers
     private void MarkerListener(MouseEvent arg0) {
         if (zoomManager.isPointOnImage(arg0.getPoint()) && (floor != null)) {
 
-            MarkerMap markers = floor.markers;
-            Marker new_m = markers.addMarker(arg0.getPoint());
+            objects.Point found = null;
+            objects.Point tp = createPoint(arg0);
 
-            if (new_m != null) {
+            // verifico se mi trovo "nei pressi" di un point già esistente o di una path
+            for (objects.Point p : points) {
 
-                // fermo TUTTO (zoom, movimento e listener)
-                if (!markers.withJS.debug)
-                    this.stopAll(true);
-
-                // aggiungo l'oggetto al JPanel principale
-                this.add(new_m);
-
-                // imposto la posizione dell'oggetto sul JPanel
-                new_m.setBounds();
-
-                new_m.setVisible(true);
-                new_m.setEnabled(true);
-
-                markers.setMarkerSelected(new_m.id);
-
-                this.updatePanel();
-
-                markers.withJS.sendNewMarker(new_m, floor.getFloor());
-
-                if (this.debug && (markers.size() > 4)) {
-                    this.setDrawOperationType(Constants.TYPE_PATH);
-                    markers.get(0).valido = true;
+                if (p.isNear(tp)) {
+                    found = p;
+                    break;
                 }
             }
+
+            // nel caso esista già un marker in quella posizione
+            // gli invio il "click" e termino
+            if (found != null) {
+                for (Marker m : markers) {
+                    if (m.getPoint() == found) {
+                        m.mouseClicked(arg0);
+                        return;
+                    }
+                }
+            }
+
+            // se non ho ancora trovato nulla, verifico se si trova su qualche path
+            if (found == null)
+                found = paths.findPoint(tp);
+
+            // se non è neppure su di una path... utilizzo il punto creato prima
+            if (found == null)
+                found = tp;
+
+            // fermo TUTTO (zoom, movimento e listener)
+            this.stopAll(true);
+
+            // creo un nuovo marker
+            Marker marker = new Marker(found, this);
+
+
+            // aggiungo l'oggetto al JPanel principale
+            this.add(marker);
+
+            // imposto la posizione dell'oggetto sul JPanel
+            marker.setBounds();
+
+            marker.setVisible(true);
+            marker.setEnabled(true);
+
+            markers.setSelected(marker);
+
+            this.updatePanel();
+
+            // comunico al JS che ho creato un nuovo marker
+            // e aspetto che restituisca i dati del marker
+            withJS.newMarker();
+
+
         }
     }
+
 }

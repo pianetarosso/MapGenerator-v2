@@ -3,10 +3,13 @@ package graphic.jpanel;
 import common.Constants;
 import communication.WithJS;
 import graphic.ZoomManager;
+import graphic.marker.Markers;
+import graphic.path.Paths;
 import objects.Floor;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
 
 public class MyJPanel extends JPanel {
 
@@ -16,11 +19,15 @@ public class MyJPanel extends JPanel {
         return floor;
     }
 
+    public Markers markers;
+    public Paths paths;
+    public ArrayList<objects.Point> points;
+
     // piano selezionato
-    private Floor floor = null;
+    protected Floor floor = null;
     public Floor[] floors;
 
-    private boolean debug = false;
+    private int counter = 0;
 
     // tipo di operazione che si effettua con il click (o trascinamento) del mouse
     protected String type = "";
@@ -29,15 +36,17 @@ public class MyJPanel extends JPanel {
     // variabili per la gestione dei zoom e spostamento
     public ZoomManager zoomManager;
 
+    protected WithJS withJS;
+
     //////////////////////////////////////////////////////////////////////
     // METODI DI CLASSE e BASE
     // ///////////////////////////////////////////////////////////////////
 
     // COSTRUTTORE
-    public MyJPanel(Floor[] floors, WithJS withJS, boolean debug) {
+    public MyJPanel(Floor[] floors, WithJS withJS) {
 
         this.floors = floors;
-        this.debug = debug;
+        this.withJS = withJS;
 
         // elimino il layout, per impostare gli oggetti con le coordinate
         setLayout(null);
@@ -48,8 +57,16 @@ public class MyJPanel extends JPanel {
         // creo uno ZoomManager
         zoomManager = new ZoomManager(this);
 
+        markers = new Markers();
+        paths = new Paths(this);
+        points = new ArrayList<objects.Point>();
+
     }
 
+    public int getId() {
+        counter++;
+        return counter;
+    }
 
     // Disegno del JPanel
     @Override
@@ -69,7 +86,7 @@ public class MyJPanel extends JPanel {
                     RenderingHints.KEY_ANTIALIASING,
                     RenderingHints.VALUE_ANTIALIAS_ON);
 
-            floor.paths.draw(g2);
+            paths.draw(g2);
 
             updatePanel();
         }
@@ -118,36 +135,25 @@ public class MyJPanel extends JPanel {
         // aggiorno il panel
         updatePanel();
 
-        if (debug)
-            setDrawOperationType(Constants.TYPE_MARKER);
+
     }
 
 
     // imposto il "metodo" di disegno selezionato
     public void setDrawOperationType(String type) {
 
-        if (type.contains(Constants.TYPE_MARKER))
+        if (type.contains(Constants.TYPE_MARKER)) {
             this.type = Constants.TYPE_MARKER;
+            paths.reset();
+        }
 
-        if (type.contains(Constants.TYPE_PATH))
+        if (type.contains(Constants.TYPE_PATH)) {
             this.type = Constants.TYPE_PATH;
+            markers.resetSelection();
+        }
 
         this.updatePanel();
     }
-
-
-    // Cancellazione di un marker o path (funzione chiamata dal JS)
-    public void delete(int id, String type) {
-
-        if (type.contains("marker"))
-            floor.markers.deleteMarker(id);
-        else
-            floor.paths.delete();
-
-        floor.paths.validate();
-    }
-
-    /////////////////////////////////////////////////////////////////////////////////////
 
 
     public boolean isMarkerType() {
@@ -156,5 +162,9 @@ public class MyJPanel extends JPanel {
 
     public boolean isPathType() {
         return type == Constants.TYPE_PATH;
+    }
+
+    public ZoomManager getZoomManager() {
+        return zoomManager;
     }
 }

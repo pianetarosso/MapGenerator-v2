@@ -11,20 +11,36 @@ import java.awt.*;
  */
 public class Constants {
 
+
+    // FUNZIONI JS //////////////////////////////////////////////////////////////////////////
+
+
+    //recupero e parsing dei piani
     public static final String GET_FLOORS = "getFloors();";
     public static final String NUMERO_DI_PIANO = "numero_di_piano";
     public static final String LINK = "immagine";
     public static final String ID = "id";
 
-    public static final String NEW_MARKER = "createNewMarker";
-    public static final String EDIT_MARKER = "editMarker";
-
+    // abilito i campi del JS (DOPO il caricamento delle immagini)
     public static final String ENABLE_JS_INPUT = "enableInputs()";
+
+    // comunico che ho creato un nuovo marker, affinchè l'utente possa inserire i dati
+    public static final String NEW_MARKER = "createNewMarker()";
+
+    // invio i dati di un marker per l'edit
+    public static final String SEND_MARKER = "setMarkerData";
+
+    // prompt cancellazione di una path
+    public static final String SEND_PATH = "setPath()";
+
+
     public static final String UPDATE_POSITION = "updatePosition";
 
     public static final String DELETE_PATH = "deletePath()";
     public static final String IS_VALID = "isValid";
 
+
+    // COSTANTI GRAFICHE  /////////////////////////////////////////////////////////////////
     public static final int MIN_MARKER_DISTANCE = 17;
 
     public static final int MIN_PATH_DISTANCE = 10;
@@ -37,9 +53,6 @@ public class Constants {
 
     // colore dello sfondo
     public static final Color BACKGROUND = Color.black;
-
-
-    // COLORI //////////////////////////////////////////////////////////////
 
     // Sfondo
     public static final Color TRANSPARENT_COLOR = new Color(0, 0, 0, 0);
@@ -59,21 +72,9 @@ public class Constants {
     // valore di trasparenza da applicare quando trascinato
     public static final int ALPHA = 50;
 
-    /////////////////////////////////////////////////////////////////////////////
-
-
-    // DIMENSIONI //////////////////////////////////////////////////////////////
-
     // diametro dell'oggetto
     public static final int DIAMETER = 10;
-
-
     public static final double MAX_M_DIFFERENCE = 0.1;
-
-    ////////////////////////////////////////////////////////////////////////////
-
-    public static final String TYPE_MARKER = "marker";
-    public static final String TYPE_PATH = "path";
 
     public static final Color VALIDATED_PATH_COLOR = Color.green;
     public static final Color NOT_VALIDATED_PATH_COLOR = Color.red;
@@ -82,6 +83,17 @@ public class Constants {
     public static final int SPESSORE = 2;
     public static final int MINIMUM_PATH_LENGTH = 10;
 
-    public static final String TEST_URL1 = "http://127.0.0.1:8000/media/floors/IMG_20111009_172117_3.jpg";
-    public static final String TEST_URL2 = "http://127.0.0.1:8000/media/floors/IMG_20111009_171138_9.jpg";
+
+    // EVENTI DEL MOUSE ///////////////////////////////////////////////////////////////////////
+    public static final String mouseDragged = "mouseDragged";
+    public static final String mousePressed = "mousePressed";
+    public static final String mouseReleased = "mouseReleased";
+    public static final String mouseClicked = "mouseClicked";
+
+
+    //OPERAZIONI CONSENTITE ///////////////////////////////////////////////////////////////////
+    public static final String TYPE_MARKER = "marker";
+    public static final String TYPE_PATH = "path";
+
+
 }

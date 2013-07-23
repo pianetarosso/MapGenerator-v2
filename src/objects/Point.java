@@ -21,6 +21,10 @@ public class Point {
 
     private boolean valid = false;
 
+    public ZoomManager getZoomManager() {
+        return zoomManager;
+    }
+
     private ZoomManager zoomManager;
 
 
@@ -93,9 +97,22 @@ public class Point {
     // testo se i punti sono troppo vicini tra loro (nel contesto scalato, NON reale)
     public boolean isNear(Point p) {
 
+        if (floor != p.getFloor())
+            return false;
+
         // se TRUE sono troppo vicini
         return Helper.testDistance(this, p, Constants.MIN_MARKER_DISTANCE);
     }
+
+    // testo se i punti sono troppo vicini tra loro (nel contesto scalato, NON reale)
+    public boolean isNear(java.awt.Point p) {
+
+        Point pp = new Point(0, p.getX(), p.getY(), floor, zoomManager);
+
+        // se TRUE sono troppo vicini
+        return Helper.testDistance(this, pp, Constants.MIN_MARKER_DISTANCE);
+    }
+
 
     public java.awt.Point getPanelPosition() {
         return new java.awt.Point(getPanelPosition_X(), getPanelPosition_Y());

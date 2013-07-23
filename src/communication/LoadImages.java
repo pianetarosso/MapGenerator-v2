@@ -1,7 +1,7 @@
 package communication;
 
 import common.Constants;
-import main.MapGenerator;
+import main.MyJApplet;
 import objects.Floor;
 
 import java.io.IOException;
@@ -19,13 +19,13 @@ public class LoadImages implements Runnable {
 
     private final WithJS cwjs;
     private Floor[] floors;
-    private final MapGenerator mg;
+    private final MyJApplet myJApplet;
 
-    public LoadImages(Floor[] floors, WithJS cwjs, MapGenerator mg) {
+    public LoadImages(Floor[] floors, WithJS cwjs, MyJApplet myJApplet) {
 
         this.floors = floors;
         this.cwjs = cwjs;
-        this.mg = mg;
+        this.myJApplet = myJApplet;
 
         Thread ct = Thread.currentThread();
         ct.setName("Master Thread");
@@ -42,8 +42,8 @@ public class LoadImages implements Runnable {
                 f.loadImage();
             }
 
-            mg.setFloor(floors[0].getFloor());
-            mg.setOperation(Constants.TYPE_MARKER);
+            myJApplet.setFloor(floors[0].getFloor());
+            myJApplet.setOperation(Constants.TYPE_MARKER);
             cwjs.enableInput();
         } catch (IOException e) {
         }

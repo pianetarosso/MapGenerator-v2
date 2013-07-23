@@ -3,7 +3,7 @@ package graphic.marker;
 import common.Constants;
 import graphic.ZoomManager;
 import graphic.jpanel.JPanelImmagine;
-import objects.Floor;
+import graphic.path.Path;
 
 import java.awt.*;
 import java.awt.event.MouseEvent;
@@ -22,15 +22,12 @@ public class MyMouseListeners extends MyJComponent implements MouseListener, Mou
     private ZoomManager zoomManager;
 
     public MyMouseListeners(
-            int x,
-            int y,
-            ZoomManager zoomManager,
-            int id,
-            Floor floor,
+            objects.Point point,
             JPanelImmagine jPanelImmagine) {
-        super(x, y, zoomManager, id, floor, jPanelImmagine);
 
-        this.zoomManager = zoomManager;
+        super(point, jPanelImmagine);
+
+        this.zoomManager = point.getZoomManager();
     }
 
     // ascoltatori del mouse
@@ -59,7 +56,10 @@ public class MyMouseListeners extends MyJComponent implements MouseListener, Mou
         if (jPanelImmagine.isMarkerType()) {
 
             jPanelImmagine.stopAll(true);
+            jPanelImmagine.markers.setSelected((Marker) arg0.getSource());
             arg0.consume();
+
+            // inviare i dati del marker fuori per l'editing
         } else
             jPanelImmagine.mouseClicked(arg0);
     }
@@ -83,55 +83,48 @@ public class MyMouseListeners extends MyJComponent implements MouseListener, Mou
             p.x = p.x + point.getPanelPosition_X() - Constants.DIAMETER / 2;
             p.y = p.y + point.getPanelPosition_Y() - Constants.DIAMETER / 2;
 
+            objects.Point tp = new objects.Point(0, p.x, p.y, jPanelImmagine.getFloor(), zoomManager);
 
-            if (floor.testNear(p, id))
-                moveMarker = false;
-            else {
-                this.setCoordinates(p);
-                cwjs.updateLocation(id, p.x, p.y);
-                jpi.isValid();
+            for (objects.Point otp : jPanelImmagine.points) {
+                if (otp.isNear(tp)) {
+                    moveMarker = false;
+                    break;
+                }
+            }
+
+            for (Path otp : jPanelImmagine.paths) {
+
+                if (otp.contains(tp) != null) {
+                    moveMarker = false;
+                    break;
+                }
+            }
+
+            if (moveMarker) {
+                point.setX(p.getX());
+                point.setY(p.getY());
             }
         }
         arg0.consume();
     }
 
-}
-
 
     @Override
     public void mousePressed(MouseEvent arg0) {
-        if (!stopped) {
+        if (jPanelImmagine.isMarkerType()) {
             moveMarker = true;
             arg0.consume();
-        } else {
-            JPanelImmagine jpi = (JPanelImmagine) this.getParent();
-            // MouseEvent(Component source, int id, long when, int modifiers, int x, int y, int clickCount, boolean popupTrigger)
-            Point coord = this.getScaledMarkerPosition();
-            MouseEvent me = new MouseEvent(arg0.getComponent(), arg0.getID(), arg0.getWhen(), arg0.getModifiers(), coord.x, coord.y, arg0.getClickCount(), false);
-            jpi.mousePressed(me);
         }
     }
 
     @Override
     public void mouseReleased(MouseEvent arg0) {
 
-        if (!stopped) {
+        if (jPanelImmagine.isMarkerType()) {
             moveMarker = false;
+
+            // aggiungere controllo per le path nel caso si sovrappongano dopo lo spostamento del marker (funzione cross)
             arg0.consume();
-        } else {
-            JPanelImmagine jpi = (JPanelImmagine) this.getParent();
-            Point p = arg0.getPoint();
-
-            Point old_marker_s = zoom.getPanelPosition(new Point(x, y));
-
-            // correggo le coordinate, quelle lette infatti sono in relazione
-            // alla posizione in alto a sx del marker
-            p.x = p.x + old_marker_s.x - Constants.DIAMETER / 2;
-            p.y = p.y + old_marker_s.y - Constants.DIAMETER / 2;
-
-            MouseEvent me = new MouseEvent(arg0.getComponent(), arg0.getID(), arg0.getWhen(), arg0.getModifiers(), p.x, p.y, arg0.getClickCount(), false);
-
-            jpi.mouseReleased(me);
         }
     }
 

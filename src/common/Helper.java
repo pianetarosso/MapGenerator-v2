@@ -26,7 +26,7 @@ public class Helper {
     Restituisce TRUE se minore o uguale alla distanza minima impostata*/
     public static boolean testDistance(int x1, int y1, int x2, int y2, int test_distance) {
 
-        return test_distance <= calculateDistance(x1, y1, x2, y2);
+        return test_distance >= calculateDistance(x1, y1, x2, y2);
     }
 
     public static boolean testDistance(Point p, Point a, int test_distance) {

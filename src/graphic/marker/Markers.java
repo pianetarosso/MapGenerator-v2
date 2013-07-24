@@ -3,6 +3,7 @@ package graphic.marker;
 import graphic.jpanel.JPanelImmagine;
 import graphic.jpanel.MyJPanel;
 import graphic.path.Paths;
+import objects.Floor;
 import objects.Point;
 import objects.Room;
 
@@ -18,6 +19,15 @@ import java.util.ArrayList;
 public class Markers extends ArrayList<Marker> {
 
 
+    public void setVisible(Floor floor) {
+
+        for (Marker m : this) {
+
+            m.setVisible(m.getPoint().getFloor() == floor);
+            m.setEnabled(m.getPoint().getFloor() == floor);
+        }
+    }
+
     public void setSelected() {
 
         for (Marker m : this)
@@ -32,6 +42,18 @@ public class Markers extends ArrayList<Marker> {
         resetSelection();
         m.setClicked(true);
         selected = m;
+    }
+
+    public void setSelected(java.awt.Point p) {
+
+        resetSelection();
+
+        for (Marker m : this)
+            if (m.contains(p)) {
+                m.setClicked(true);
+                selected = m;
+                break;
+            }
     }
 
     public Marker getSelected() {
@@ -125,4 +147,13 @@ public class Markers extends ArrayList<Marker> {
         }
     }
 
+    public String toString() {
+
+        String out = "Markers:\n";
+
+        for (Marker m : this)
+            out += m.toString() + "\n";
+
+        return out;
+    }
 }

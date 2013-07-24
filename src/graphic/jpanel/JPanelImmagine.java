@@ -140,6 +140,7 @@ public class JPanelImmagine extends MyJPanel implements MouseListener, MouseMoti
     private void MarkerListener(MouseEvent arg0) {
         if (zoomManager.isPointOnImage(arg0.getPoint()) && (floor != null)) {
 
+
             objects.Point found = null;
             objects.Point tp = createPoint(arg0);
 
@@ -176,7 +177,6 @@ public class JPanelImmagine extends MyJPanel implements MouseListener, MouseMoti
 
             // creo un nuovo marker
             Marker marker = new Marker(found, this);
-
 
             // aggiungo l'oggetto al JPanel principale
             this.add(marker);

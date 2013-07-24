@@ -16,7 +16,7 @@ public class Point {
     private int id;
     private double x, y;
     private Floor floor;
-    private String RFID;
+    private String RFID = null;
     private boolean access = false;
 
     private boolean valid = false;
@@ -124,5 +124,15 @@ public class Point {
 
     public void resetValidation() {
         valid = false || access;
+    }
+
+    public String toString() {
+        return "Point Id: " + id + "; " +
+                "RFID: " + RFID + "; " +
+                "Access: " + access + "; " +
+                "X: " + x + "; " +
+                "Y: " + y + "; " +
+                "Floor : " + floor.toString();
+
     }
 }

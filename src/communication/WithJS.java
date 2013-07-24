@@ -68,6 +68,7 @@ public class WithJS {
 
     // comunico alla pagina di aprire i campi per l'introduzione dei dati di un nuovo marker
     public void newMarker() {
+
         window.eval(Constants.NEW_MARKER);
     }
 
@@ -105,5 +106,12 @@ public class WithJS {
         window.eval(Constants.SEND_PATH);
     }
 
+    // prompt cancellazione di una path
+    public void debug(String value) {
+
+        Object[] out = {value};
+
+        window.call(Constants.DEBUG, out);
+    }
 
 }

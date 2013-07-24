@@ -58,4 +58,13 @@ public class Room {
     public void setLink(String link) {
         this.link = link;
     }
+
+    public String toString() {
+
+        return "Room Id: " + id + "; " +
+                "Name: " + name + "; " +
+                "People: " + people + "; " +
+                "Other: " + other + "; " +
+                "Link: " + link + "; ";
+    }
 }

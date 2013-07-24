@@ -83,14 +83,9 @@ public abstract class MyJComponent extends JComponent {
 
         super.paintComponent(g);
 
-        if (point.getFloor() != jPanelImmagine.getFloor()) {
-            this.setVisible(false);
-            this.setEnabled(false);
-            return;
-        }
+        this.setVisible(point.getFloor() == jPanelImmagine.getFloor());
+        this.setEnabled(point.getFloor() == jPanelImmagine.getFloor());
 
-        this.setVisible(true);
-        this.setEnabled(true);
 
         // abilito l'anti-aliasing
         Graphics2D antiAlias = (Graphics2D) g;

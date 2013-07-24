@@ -50,5 +50,19 @@ public class Marker extends MyMouseListeners {
         return room;
     }
 
+    public String toString() {
+
+        String out = "Marker ";
+        out += "Point: " + point.toString() + "; ";
+
+        if (room != null)
+            out += "Room: " + room.toString() + "; ";
+
+        out += "Elevator: " + elevator + "; ";
+        out += "Stair: " + stair + "; ";
+
+        return out;
+    }
+
 
 }

@@ -19,6 +19,10 @@ public class MyJPanel extends JPanel {
         return floor;
     }
 
+    public Floor[] getFloors() {
+        return floors;
+    }
+
     public Markers markers;
     public Paths paths;
     public ArrayList<objects.Point> points;
@@ -108,8 +112,9 @@ public class MyJPanel extends JPanel {
 
         else {
             temp_type = type;
-            this.setDrawOperationType("None");
+            type = Constants.TYPE_NONE;
         }
+        withJS.debug("Type: " + type);
     }
 
 
@@ -126,6 +131,7 @@ public class MyJPanel extends JPanel {
             if (f.getFloor() == nf) {
                 this.floor = f;
                 this.setDrawOperationType(type);
+                markers.setVisible(floor);
                 break;
             }
 
@@ -145,14 +151,12 @@ public class MyJPanel extends JPanel {
         if (type.contains(Constants.TYPE_MARKER)) {
             this.type = Constants.TYPE_MARKER;
             paths.reset();
-        }
-
-        if (type.contains(Constants.TYPE_PATH)) {
+        } else if (type.contains(Constants.TYPE_PATH)) {
             this.type = Constants.TYPE_PATH;
             markers.resetSelection();
-        }
+        } else
 
-        this.updatePanel();
+            this.updatePanel();
     }
 
 

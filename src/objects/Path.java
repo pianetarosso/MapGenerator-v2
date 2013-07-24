@@ -70,4 +70,13 @@ public class Path {
     public String getIdentifier() {
         return identifier;
     }
+
+    public String toString() {
+        return "Path Id: " + id + "; " +
+                "Elevator: " + elevator + "; " +
+                "Stair: " + stair + "; " +
+                "Identifier: " + identifier + "; " +
+                "P: " + p.toString() + "; " +
+                "A: " + a.toString() + "; ";
+    }
 }

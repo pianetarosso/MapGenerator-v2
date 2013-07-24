@@ -39,6 +39,8 @@ public class Constants {
     public static final String DELETE_PATH = "deletePath()";
     public static final String IS_VALID = "isValid";
 
+    public static final String DEBUG = "debug";
+
 
     // COSTANTI GRAFICHE  /////////////////////////////////////////////////////////////////
     public static final int MIN_MARKER_DISTANCE = 17;
@@ -94,6 +96,6 @@ public class Constants {
     //OPERAZIONI CONSENTITE ///////////////////////////////////////////////////////////////////
     public static final String TYPE_MARKER = "marker";
     public static final String TYPE_PATH = "path";
-
+    public static final String TYPE_NONE = "none";
 
 }

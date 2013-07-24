@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="MapGenerator:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/MapGenerator_jar</output-path>
+    <root id="archive" name="MapGenerator.jar">
+      <element id="module-output" name="MapGenerator" />
+      <element id="library" level="project" name="plugin" />
+      <element id="library" level="project" name="gson-2.2.2" />
+    </root>
+  </artifact>
+</component>

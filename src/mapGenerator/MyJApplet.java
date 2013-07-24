@@ -1,4 +1,4 @@
-package main;
+package mapGenerator;
 
 import communication.LoadImages;
 import communication.WithJS;
@@ -31,14 +31,14 @@ public class MyJApplet extends JApplet {
     // VARIABILI
 
     private Floor[] floors;
-    private WithJS cwjs;
+    protected WithJS withJS;
 
     public void start() {
 
-        cwjs = new WithJS(this);
-        floors = cwjs.parseFloors(this.getCodeBase());
+        withJS = new WithJS(this);
+        floors = withJS.parseFloors(this.getCodeBase());
 
-        new LoadImages(floors, cwjs, this);
+        new LoadImages(floors, withJS, this);
 
         // imposto il layout del contenitore principale
         fondo.setLayout(new BorderLayout());
@@ -61,7 +61,7 @@ public class MyJApplet extends JApplet {
     // Creo il pannello di disegno dell'jPanelImmagine
     private JScrollPane buildImagePanel() {
 
-        jPanelImmagine = new JPanelImmagine(floors, cwjs);
+        jPanelImmagine = new JPanelImmagine(floors, withJS);
 
         scrollImage = new JScrollPane(jPanelImmagine,
                 ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED,

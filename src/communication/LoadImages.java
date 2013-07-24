@@ -1,7 +1,7 @@
 package communication;
 
 import common.Constants;
-import main.MyJApplet;
+import mapGenerator.MyJApplet;
 import objects.Floor;
 
 import java.io.IOException;

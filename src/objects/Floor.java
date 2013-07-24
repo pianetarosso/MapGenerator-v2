@@ -41,12 +41,6 @@ public class Floor {
         return floor;
     }
 
-    public String toString() {
-        return id + " "
-                + floor + " "
-                + link.toString() + " ";
-    }
-
 
     public Point addPoint(double x, double y, ZoomManager zoomManager, int counter) {
 
@@ -62,4 +56,10 @@ public class Floor {
         return p;
     }
 
+
+    public String toString() {
+        return "Floor Id: " + id + "; " +
+                "Floor: " + floor + "; " +
+                "Link: " + link.toString() + "; ";
+    }
 }

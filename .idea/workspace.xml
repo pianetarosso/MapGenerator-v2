@@ -10,30 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7419bf70-79a3-439b-b922-96d855cc384a" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/MapGenerator_jar.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/gson_2_2_2.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/CommunicationWithJS.java" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/MapGenerator-v2.0.iml" afterPath="$PROJECT_DIR$/MapGenerator.iml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/MapGenerator.java" afterPath="$PROJECT_DIR$/src/mapGenerator/MapGenerator.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/MyJApplet.java" afterPath="$PROJECT_DIR$/src/mapGenerator/MyJApplet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.name" afterPath="$PROJECT_DIR$/.idea/.name" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/common/Constants.java" afterPath="$PROJECT_DIR$/src/common/Constants.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/objects/Floor.java" afterPath="$PROJECT_DIR$/src/objects/Floor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/common/Helper.java" afterPath="$PROJECT_DIR$/src/common/Helper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/graphic/jpanel/JPanelImmagine.java" afterPath="$PROJECT_DIR$/src/graphic/jpanel/JPanelImmagine.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/communication/LoadImages.java" afterPath="$PROJECT_DIR$/src/communication/LoadImages.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/graphic/marker/Marker.java" afterPath="$PROJECT_DIR$/src/graphic/marker/Marker.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/graphic/marker/Markers.java" afterPath="$PROJECT_DIR$/src/graphic/marker/Markers.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/graphic/marker/MyJComponent.java" afterPath="$PROJECT_DIR$/src/graphic/marker/MyJComponent.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/graphic/jpanel/MyJPanel.java" afterPath="$PROJECT_DIR$/src/graphic/jpanel/MyJPanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/graphic/marker/MyMouseListeners.java" afterPath="$PROJECT_DIR$/src/graphic/marker/MyMouseListeners.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/objects/Path.java" afterPath="$PROJECT_DIR$/src/objects/Path.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/objects/Point.java" afterPath="$PROJECT_DIR$/src/objects/Point.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/objects/Room.java" afterPath="$PROJECT_DIR$/src/objects/Room.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/communication/WithJS.java" afterPath="$PROJECT_DIR$/src/communication/WithJS.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="MapGenerator-v2.0.iws" />
@@ -63,7 +40,7 @@
     <file path="/ActionMarker.java" changelist="7419bf70-79a3-439b-b922-96d855cc384a" time="1374161463837" ignored="false" />
     <file path="/Marker.java" changelist="7419bf70-79a3-439b-b922-96d855cc384a" time="1374593924318" ignored="false" />
     <file path="/CustomPoint.java" changelist="7419bf70-79a3-439b-b922-96d855cc384a" time="1374159830118" ignored="false" />
-    <file path="/Dummy.txt" changelist="7419bf70-79a3-439b-b922-96d855cc384a" time="1374681629462" ignored="false" />
+    <file path="/Dummy.txt" changelist="7419bf70-79a3-439b-b922-96d855cc384a" time="1374705219979" ignored="false" />
     <file path="/MyMouseListeners.java" changelist="7419bf70-79a3-439b-b922-96d855cc384a" time="1374653400690" ignored="false" />
     <file path="/MyJComponent.java" changelist="7419bf70-79a3-439b-b922-96d855cc384a" time="1374482760042" ignored="false" />
     <file path="/Markers.java" changelist="7419bf70-79a3-439b-b922-96d855cc384a" time="1374672707095" ignored="false" />
@@ -99,7 +76,6 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -136,6 +112,7 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -413,8 +390,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -605,21 +580,23 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="GenerateAntBuildDialog.generateIdeaHomeProperty" value="false" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="38" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="39" />
-    <property name="OverrideImplement.combined" value="true" />
     <property name="project.structure.proportion" value="0.15" />
+    <property name="OverrideImplement.combined" value="true" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="39" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="Repository.Attach.JavaDocs" value="false" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
-    <property name="MemberChooser.sorted" value="false" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="38" />
     <property name="GenerateAntBuildDialog.generateSingleFile" value="false" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="38" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
     <property name="recentsLimit" value="5" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
     <property name="GenerateAntBuildDialog.inclineRuntiemClasspath" value="false" />
@@ -634,24 +611,24 @@
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
-    <property name="MemberChooser.showClasses" value="true" />
     <property name="Repository.Attach.Sources" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="Downloaded.Files.Path" value="$PROJECT_DIR$/lib" />
-    <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
+    <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
     <property name="options.lastSelected" value="preferences.intentionPowerPack" />
-    <property name="project.structure.side.proportion" value="0.2" />
     <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="GenerateAntBuildDialog.backupFiles" value="true" />
-    <property name="dynamic.classpath" value="false" />
     <property name="options.searchVisible" value="true" />
+    <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -696,6 +673,19 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -721,19 +711,6 @@
       <envs />
       <properties />
       <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -823,7 +800,11 @@
       <created>1374563584225</created>
       <updated>1374563584225</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Debugging">
+      <created>1374681776444</created>
+      <updated>1374681776444</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers>
       <GitHub shared="false">
         <commitMessageFormat>{id} {summary}</commitMessageFormat>
@@ -860,7 +841,7 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32888147" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32888147" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32888147" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24948876" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>

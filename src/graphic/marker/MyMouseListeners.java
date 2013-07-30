@@ -59,6 +59,7 @@ public class MyMouseListeners extends MyJComponent implements MouseListener, Mou
             jPanelImmagine.markers.setSelected(arg0.getPoint());
             arg0.consume();
 
+            jPanelImmagine.withJS.sendMarker(jPanelImmagine.markers.getSelected());
             // inviare i dati del marker fuori per l'editing
         } else
             jPanelImmagine.mouseClicked(arg0);

@@ -40,7 +40,7 @@ public class MyJPanel extends JPanel {
     // variabili per la gestione dei zoom e spostamento
     public ZoomManager zoomManager;
 
-    protected WithJS withJS;
+    public WithJS withJS;
 
     //////////////////////////////////////////////////////////////////////
     // METODI DI CLASSE e BASE

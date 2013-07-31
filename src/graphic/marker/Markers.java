@@ -63,24 +63,16 @@ public class Markers extends ArrayList<Marker> {
 
     public void resetSelection() {
 
-        if (selected != null)
+        if (selected != null) {
             selected.setClicked(false);
+            selected = null;
+        }
     }
 
     private Marker selected = null;
 
     public Markers() {
         super();
-    }
-
-    public boolean contains(Point p) {
-
-        for (Marker m : this) {
-
-            if (m.point == p)
-                return true;
-        }
-        return false;
     }
 
     public void delete(Paths paths, ArrayList<Point> points, MyJPanel myJPanel) {
@@ -99,13 +91,12 @@ public class Markers extends ArrayList<Marker> {
 
             // verifico se è utilizzato all'interno delle path
             // se non lo è lo elimino dalla lista di points
-            if (paths.isPointUsed(selected.getPoint()))
+            if (!paths.isPointUsed(selected.getPoint()))
                 points.remove(selected.getPoint());
 
             this.remove(selected);
 
             selected = null;
-
         }
     }
 
@@ -138,11 +129,14 @@ public class Markers extends ArrayList<Marker> {
     public void dismiss(JPanelImmagine jPanelImmagine) {
 
         if (selected != null) {
-            selected.setEnabled(false);
-            selected.setVisible(false);
 
-            jPanelImmagine.remove(selected);
+            if (!this.contains(selected)) {
+                selected.setEnabled(false);
+                selected.setVisible(false);
 
+                jPanelImmagine.remove(selected);
+            } else
+                selected.setClicked(false);
             selected = null;
         }
     }

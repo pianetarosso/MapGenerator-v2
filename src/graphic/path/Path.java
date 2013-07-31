@@ -34,7 +34,7 @@ public class Path extends objects.Path {
 
     // disegno la linea (per ora senza giochini di validazione riguardo al colore)
     // se la path in input e this sono uguali, vuol dire che è stata selezionata
-    protected void draw(Graphics2D g2, Path path) {
+    void draw(Graphics2D g2, Path path) {
 
         Line2D line = new Line2D.Double(p.getPanelPosition(), a.getPanelPosition());
 

@@ -1,9 +1,8 @@
 package graphic.marker;
 
-import common.Constants;
-import graphic.ZoomManager;
 import graphic.jpanel.JPanelImmagine;
 import graphic.path.Path;
+import zoomManager.ZoomManager;
 
 import java.awt.*;
 import java.awt.event.MouseEvent;
@@ -17,18 +16,39 @@ import java.awt.event.MouseMotionListener;
  * Time: 16.58
  * To change this template use File | Settings | File Templates.
  */
-public class MyMouseListeners extends MyJComponent implements MouseListener, MouseMotionListener {
+abstract class MyMouseListeners extends MyJComponent implements MouseListener, MouseMotionListener {
 
-    private ZoomManager zoomManager;
+    private final ZoomManager zoomManager;
+    private Marker marker;
 
-    public MyMouseListeners(
+    MyMouseListeners(
             objects.Point point,
             JPanelImmagine jPanelImmagine) {
 
         super(point, jPanelImmagine);
 
         this.zoomManager = point.getZoomManager();
+
     }
+
+    void setMarker(Marker marker) {
+        this.marker = marker;
+    }
+
+    @Override
+    public void mouseClicked(MouseEvent arg0) {
+
+        if (jPanelImmagine.isMarkerType()) {
+
+            jPanelImmagine.stopAll(true);
+            jPanelImmagine.getMarkers().setSelected(marker);
+            arg0.consume();
+            jPanelImmagine.toJS.sendMarker(jPanelImmagine.getMarkers().getSelected());
+            // inviare i dati del marker fuori per l'editing
+        } else
+            jPanelImmagine.mouseClicked(arg0);
+    }
+
 
     // ascoltatori del mouse
     @Override
@@ -50,21 +70,6 @@ public class MyMouseListeners extends MyJComponent implements MouseListener, Mou
 
     // MOUSE CLICK LISTENER per visualizzare un marker o cancellarlo //////////////////////////////
 
-    @Override
-    public void mouseClicked(MouseEvent arg0) {
-
-        if (jPanelImmagine.isMarkerType()) {
-
-            jPanelImmagine.stopAll(true);
-            jPanelImmagine.markers.setSelected(arg0.getPoint());
-            arg0.consume();
-
-            jPanelImmagine.withJS.sendMarker(jPanelImmagine.markers.getSelected());
-            // inviare i dati del marker fuori per l'editing
-        } else
-            jPanelImmagine.mouseClicked(arg0);
-    }
-
 
     // MOUSE DRAGGED LISTENER
     // implementa il trascinamento dell'oggetto
@@ -81,19 +86,19 @@ public class MyMouseListeners extends MyJComponent implements MouseListener, Mou
 
             // correggo le coordinate, quelle lette infatti sono in relazione
             // alla posizione in alto a sx del marker
-            p.x = p.x + point.getPanelPosition_X() - Constants.DIAMETER / 2;
-            p.y = p.y + point.getPanelPosition_Y() - Constants.DIAMETER / 2;
+            p.x = p.x + point.getPanelPosition_X() - DIAMETER / 2;
+            p.y = p.y + point.getPanelPosition_Y() - DIAMETER / 2;
 
             objects.Point tp = new objects.Point(0, p.x, p.y, jPanelImmagine.getFloor(), zoomManager);
 
-            for (objects.Point otp : jPanelImmagine.points) {
+            for (objects.Point otp : jPanelImmagine.getPoints()) {
                 if (otp.isNear(tp)) {
                     moveMarker = false;
                     break;
                 }
             }
 
-            for (Path otp : jPanelImmagine.paths) {
+            for (Path otp : jPanelImmagine.getPaths()) {
 
                 if (otp.contains(tp) != null) {
                     moveMarker = false;

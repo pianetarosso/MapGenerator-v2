@@ -12,19 +12,17 @@ import objects.Point;
 public class Helper {
 
 
-    public static int calculateDistance(int x1, int y1, int x2, int y2) {
+    private static int calculateDistance(int x1, int y1, int x2, int y2) {
 
         int delta_x = x1 - x2;
         int delta_y = y1 - y2;
 
-        int distance = (int) Math.sqrt(Math.pow(delta_x, 2) + Math.pow(delta_y, 2));
-
-        return distance;
+        return (int) Math.sqrt(Math.pow(delta_x, 2) + Math.pow(delta_y, 2));
     }
 
     /*funzione per testare la distanza tra due punti.
     Restituisce TRUE se minore o uguale alla distanza minima impostata*/
-    public static boolean testDistance(int x1, int y1, int x2, int y2, int test_distance) {
+    private static boolean testDistance(int x1, int y1, int x2, int y2, int test_distance) {
 
         return test_distance >= calculateDistance(x1, y1, x2, y2);
     }

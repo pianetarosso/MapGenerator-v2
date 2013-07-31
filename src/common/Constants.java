@@ -9,7 +9,7 @@ import java.awt.*;
  * Time: 12.33
  * To change this template use File | Settings | File Templates.
  */
-public class Constants {
+public interface Constants {
 
 
     // FUNZIONI JS //////////////////////////////////////////////////////////////////////////
@@ -60,10 +60,10 @@ public class Constants {
     public static final Color TRANSPARENT_COLOR = new Color(0, 0, 0, 0);
 
     // Colore bordo durante passaggio sopra con il mouse
-    public static final Color SELECTED_COLOR = Color.white;
+    public static final Color SELECTED_COLOR = Color.gray;
 
     // Colore bordo se il marker non è selezionato
-    public static final Color NOT_SELECTED_COLOR = Color.black;
+    public static final Color NOT_SELECTED_COLOR = Color.green;
 
     // colore del marker se la validatzione non è corretta
     public static final Color VALIDATED_COLOR = Color.green;

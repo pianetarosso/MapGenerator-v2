@@ -8,16 +8,16 @@ import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
 
-public abstract class MyJComponent extends JComponent {
+abstract class MyJComponent extends JComponent implements Constants {
 
     private static final long serialVersionUID = -1934599507737914205L;
 
 
     // variabile per sapere se sull'oggetto è passato il mouse o meno
-    protected boolean mouseEntered = false;
+    boolean mouseEntered = false;
 
     // variabile per il trascinamento del marker
-    protected boolean moveMarker = false;
+    boolean moveMarker = false;
 
     public boolean isClicked() {
         return clicked;
@@ -29,16 +29,16 @@ public abstract class MyJComponent extends JComponent {
         this.clicked = clicked;
     }
 
-    protected boolean clicked = false;
+    private boolean clicked = false;
 
-    protected JPanelImmagine jPanelImmagine;
+    final JPanelImmagine jPanelImmagine;
 
-    protected Point point;
+    final Point point;
 
 
     // COSTRUTTORE //
-    protected MyJComponent(Point point,
-                           JPanelImmagine jPanelImmagine) {
+    MyJComponent(Point point,
+                 JPanelImmagine jPanelImmagine) {
 
         super();
 
@@ -50,10 +50,10 @@ public abstract class MyJComponent extends JComponent {
         enableInputMethods(true);
 
         // imposto la dimensione predefinita
-        setPreferredSize(new Dimension(Constants.DIAMETER, Constants.DIAMETER));
+        setPreferredSize(new Dimension(DIAMETER, DIAMETER));
 
         // imposto il colore di background
-        setBackground(Constants.TRANSPARENT_COLOR);
+        setBackground(TRANSPARENT_COLOR);
 
         // elimino il bordo predefinito
         setBorder(new EmptyBorder(0, 0, 0, 0));
@@ -63,9 +63,9 @@ public abstract class MyJComponent extends JComponent {
     // funzione per impostare la POSIZIONE SULL'IMMAGINE
     public void setBounds() {
 
-        setBounds(point.getPanelPosition_X() - Constants.DIAMETER / 2,
-                point.getPanelPosition_Y() - Constants.DIAMETER / 2,
-                Constants.DIAMETER, Constants.DIAMETER);
+        setBounds(point.getPanelPosition_X() - DIAMETER / 2,
+                point.getPanelPosition_Y() - DIAMETER / 2,
+                DIAMETER, DIAMETER);
     }
 
     // METODI VARI //
@@ -83,10 +83,6 @@ public abstract class MyJComponent extends JComponent {
 
         super.paintComponent(g);
 
-        this.setVisible(point.getFloor() == jPanelImmagine.getFloor());
-        this.setEnabled(point.getFloor() == jPanelImmagine.getFloor());
-
-
         // abilito l'anti-aliasing
         Graphics2D antiAlias = (Graphics2D) g;
         antiAlias.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
@@ -95,10 +91,10 @@ public abstract class MyJComponent extends JComponent {
         antiAlias.setStroke(new BasicStroke(1));
 
 
-        Color designedColor = Constants.NOT_VALIDATED_COLOR;
+        Color designedColor = NOT_VALIDATED_COLOR;
 
         if (point.isValid())
-            designedColor = Constants.VALIDATED_COLOR;
+            designedColor = VALIDATED_COLOR;
 
         g.setColor(designedColor);
 
@@ -110,21 +106,21 @@ public abstract class MyJComponent extends JComponent {
                     designedColor.getRed(),
                     designedColor.getGreen(),
                     designedColor.getBlue(),
-                    Constants.ALPHA);
+                    ALPHA);
 
             g.setColor(trans);
         }
 
         // disegno il marker
-        g.fillOval(0, 0, Constants.DIAMETER, Constants.DIAMETER);
+        g.fillOval(0, 0, DIAMETER, DIAMETER);
 
 
         // gestisco la selezione
         if ((clicked || mouseEntered) && jPanelImmagine.isMarkerType())
-            g.setColor(Constants.SELECTED_COLOR);
+            g.setColor(SELECTED_COLOR);
         else
-            g.setColor(Constants.NOT_SELECTED_COLOR);
-        g.drawOval(0, 0, Constants.DIAMETER - 1, Constants.DIAMETER - 1);
+            g.setColor(NOT_SELECTED_COLOR);
+        g.drawOval(0, 0, DIAMETER - 1, DIAMETER - 1);
 
         // aggiorno la posizione dell'oggetto sulla mappa
         this.setBounds();

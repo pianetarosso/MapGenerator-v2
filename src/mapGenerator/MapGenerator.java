@@ -16,15 +16,15 @@ public class MapGenerator extends MyJApplet {
 
 
     // NUOVO MARKER /////////////////////////////////////////////////////////////
-    @SuppressWarnings("UnusedDeclaration")
+    @Override
     public void dismissNewMarker() {
 
-        jPanelImmagine.markers.dismiss(jPanelImmagine);
+        jPanelImmagine.getMarkers().dismiss(jPanelImmagine);
         jPanelImmagine.stopAll(false);
         jPanelImmagine.updatePanel();
     }
 
-    @SuppressWarnings("UnusedDeclaration")
+    @Override
     public void saveNewMarker(
             String RFID,
             boolean access,
@@ -50,34 +50,43 @@ public class MapGenerator extends MyJApplet {
         if (stair.length() <= 0)
             stair = null;
 
-        jPanelImmagine.markers.save(
+        jPanelImmagine.getMarkers().save(
                 RFID,
                 access,
                 room,
                 elevator,
                 stair,
-                jPanelImmagine.paths,
-                jPanelImmagine.points);
+                jPanelImmagine.getPaths(),
+                jPanelImmagine.getPoints());
 
         jPanelImmagine.stopAll(false);
         jPanelImmagine.updatePanel();
 
 
-        withJS.debug(jPanelImmagine.markers.toString());
-        for (Path p : jPanelImmagine.paths)
-            withJS.debug(p.toString());
-        for (Point p : jPanelImmagine.points)
-            withJS.debug(p.toString());
+        toJS.debug(jPanelImmagine.getMarkers().toString());
+
+        debug();
 
     }
 
+    private void debug() {
+
+        for (Path p : jPanelImmagine.getPaths())
+            toJS.debug(p.toString());
+
+        for (Marker m : jPanelImmagine.getMarkers())
+            toJS.debug(m.toString());
+
+        for (Point p : jPanelImmagine.getPoints())
+            toJS.debug(p.toString());
+    }
     ///////////////////////////////////////////////////////////////////////////////////
 
 
     // EDIT & DELETE DI UN MARKER ESISTENTE ///////////////////////////////////////////
 
 
-    @SuppressWarnings("UnusedDeclaration")
+    @Override
     public void editMarker(
             String RFID,
             boolean access,
@@ -89,13 +98,13 @@ public class MapGenerator extends MyJApplet {
             String room_other) {
 
 
-        Point point = jPanelImmagine.markers.getSelected().getPoint();
+        Point point = jPanelImmagine.getMarkers().getSelected().getPoint();
 
         deleteMarker();
 
         Marker marker = new Marker(point, jPanelImmagine);
 
-        jPanelImmagine.markers.setSelected(marker);
+        jPanelImmagine.getMarkers().setSelected(marker);
 
         saveNewMarker(
                 RFID,
@@ -109,19 +118,19 @@ public class MapGenerator extends MyJApplet {
     }
 
 
-    @SuppressWarnings("UnusedDeclaration")
+    @Override
     public void deleteMarker() {
         jPanelImmagine.deleteMarker();
+        jPanelImmagine.stopAll(false);
     }
 
 
-    // restituisco la lista di nomi usati nelle stanze
-    @SuppressWarnings("UnusedDeclaration")
+    @Override
     public String getRoomNames() {
 
-        ArrayList<Room> rooms = new ArrayList<Room>();
+        ArrayList<Room> rooms = new ArrayList<>();
 
-        for (Marker m : jPanelImmagine.markers) {
+        for (Marker m : jPanelImmagine.getMarkers()) {
             if (m.getRoom() != null)
                 rooms.add(m.getRoom());
         }
@@ -136,13 +145,12 @@ public class MapGenerator extends MyJApplet {
     }
 
 
-    // restituisco la lista di codici RFID
-    @SuppressWarnings("UnusedDeclaration")
+    @Override
     public String getRFIDs() {
 
         int counter = 0;
 
-        for (Point p : jPanelImmagine.points)
+        for (Point p : jPanelImmagine.getPoints())
             if (p.getRFID() != null)
                 counter++;
 
@@ -150,14 +158,11 @@ public class MapGenerator extends MyJApplet {
 
         int i = 0;
 
-        for (Point p : jPanelImmagine.points)
+        for (Point p : jPanelImmagine.getPoints())
             if (p.getRFID() != null) {
                 out[i] = p.getRFID();
                 i++;
             }
-
-        for (String o : out)
-            System.out.println(o);
 
         Gson gson = new Gson();
         return gson.toJson(out);
@@ -165,14 +170,14 @@ public class MapGenerator extends MyJApplet {
     }
 
 
-    // restituisco la lista degli ascensori divisi per piano
-    @SuppressWarnings("UnusedDeclaration")
+    @Override
     public String getLifts() {
 
         return getLiftOrStairs(true);
     }
 
-    private String getLiftOrStairs(boolean isLift) {
+    @Override
+    public String getLiftOrStairs(boolean isLift) {
 
         Floor[] floors = jPanelImmagine.getFloors();
 
@@ -181,7 +186,7 @@ public class MapGenerator extends MyJApplet {
         for (Floor f : floors)
             map.put(f, new ArrayList<Marker>());
 
-        for (Marker m : jPanelImmagine.markers)
+        for (Marker m : jPanelImmagine.getMarkers())
             if (((isLift && (m.getElevator() != null)) ||
                     (!isLift && (m.getStair() != null))))
                 map.get(m.getPoint().getFloor()).add(m);
@@ -210,8 +215,7 @@ public class MapGenerator extends MyJApplet {
     }
 
 
-    // restituisco la lista delle scale divise per piano
-    @SuppressWarnings("UnusedDeclaration")
+    @Override
     public String getStairs() {
 
         return getLiftOrStairs(false);

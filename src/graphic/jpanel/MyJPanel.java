@@ -1,17 +1,18 @@
 package graphic.jpanel;
 
 import common.Constants;
-import communication.WithJS;
-import graphic.ZoomManager;
+import communication.ToJS;
 import graphic.marker.Markers;
 import graphic.path.Paths;
 import objects.Floor;
+import objects.Point;
+import zoomManager.ZoomManager;
 
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 
-public class MyJPanel extends JPanel {
+public class MyJPanel extends JPanel implements Constants {
 
     private static final long serialVersionUID = 1L;
 
@@ -23,47 +24,59 @@ public class MyJPanel extends JPanel {
         return floors;
     }
 
-    public Markers markers;
-    public Paths paths;
-    public ArrayList<objects.Point> points;
+    public Markers getMarkers() {
+        return markers;
+    }
+
+    public Paths getPaths() {
+        return paths;
+    }
+
+    public ArrayList<Point> getPoints() {
+        return points;
+    }
+
+    protected final Markers markers;
+    protected final Paths paths;
+    protected final ArrayList<objects.Point> points;
 
     // piano selezionato
-    protected Floor floor = null;
-    public Floor[] floors;
+    Floor floor = null;
+    private final Floor[] floors;
 
     private int counter = 0;
 
     // tipo di operazione che si effettua con il click (o trascinamento) del mouse
-    protected String type = "";
+    private String type = "";
     private String temp_type;
 
     // variabili per la gestione dei zoom e spostamento
-    public ZoomManager zoomManager;
+    final ZoomManager zoomManager;
 
-    public WithJS withJS;
+    public final ToJS toJS;
 
     //////////////////////////////////////////////////////////////////////
     // METODI DI CLASSE e BASE
     // ///////////////////////////////////////////////////////////////////
 
     // COSTRUTTORE
-    public MyJPanel(Floor[] floors, WithJS withJS) {
+    MyJPanel(Floor[] floors, ToJS toJS) {
 
         this.floors = floors;
-        this.withJS = withJS;
+        this.toJS = toJS;
 
         // elimino il layout, per impostare gli oggetti con le coordinate
         setLayout(null);
 
         // imposto il background
-        setBackground(Constants.BACKGROUND);
+        setBackground(BACKGROUND);
 
         // creo uno ZoomManager
         zoomManager = new ZoomManager(this);
 
         markers = new Markers();
         paths = new Paths(this);
-        points = new ArrayList<objects.Point>();
+        points = new ArrayList<>();
 
     }
 
@@ -112,9 +125,9 @@ public class MyJPanel extends JPanel {
 
         else {
             temp_type = type;
-            type = Constants.TYPE_NONE;
+            type = TYPE_NONE;
         }
-        withJS.debug("Type: " + type);
+        toJS.debug("Type: " + type);
     }
 
 
@@ -148,11 +161,11 @@ public class MyJPanel extends JPanel {
     // imposto il "metodo" di disegno selezionato
     public void setDrawOperationType(String type) {
 
-        if (type.contains(Constants.TYPE_MARKER)) {
-            this.type = Constants.TYPE_MARKER;
+        if (type.contains(TYPE_MARKER)) {
+            this.type = TYPE_MARKER;
             paths.reset();
-        } else if (type.contains(Constants.TYPE_PATH)) {
-            this.type = Constants.TYPE_PATH;
+        } else if (type.contains(TYPE_PATH)) {
+            this.type = TYPE_PATH;
             markers.resetSelection();
         } else
 
@@ -161,11 +174,11 @@ public class MyJPanel extends JPanel {
 
 
     public boolean isMarkerType() {
-        return type == Constants.TYPE_MARKER;
+        return type.equals(TYPE_MARKER);
     }
 
-    public boolean isPathType() {
-        return type == Constants.TYPE_PATH;
+    boolean isPathType() {
+        return type.equals(TYPE_PATH);
     }
 
     public ZoomManager getZoomManager() {

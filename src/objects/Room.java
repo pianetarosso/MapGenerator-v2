@@ -9,7 +9,7 @@ package objects;
  */
 public class Room {
 
-    private int id;
+    private final int id;
 
     public int getId() {
         return id;

@@ -1,4 +1,4 @@
-package graphic;
+package zoomManager;
 
 import common.Constants;
 
@@ -11,7 +11,7 @@ import java.awt.event.MouseWheelListener;
 import java.awt.geom.AffineTransform;
 import java.awt.image.BufferedImage;
 
-public class ZoomManager {
+public class ZoomManager implements Constants {
 
     // VARIABILI
     // ////////////////////////////////////////////////////////////////////////
@@ -29,7 +29,8 @@ public class ZoomManager {
     private double min_zoom = 1.0;
 
     // variabili di offset per il centraggio dell'immagine
-    protected double offset_x = 0.0, offset_y = 0.0;
+    private double offset_x = 0.0;
+    private double offset_y = 0.0;
 
     // variabile per abilitare / disabilitare l'uso dello zoom
     // necessaria per evitare interferenze con gli "strumenti di azione"
@@ -108,7 +109,7 @@ public class ZoomManager {
 
     // funzione per il calcolo dell'offset per tenere l'immagine posizionata
     // al centro del JPanel
-    protected double[] calcolaOffset(double zoom) {
+    double[] calcolaOffset(double zoom) {
 
         double[] offset = new double[2];
 
@@ -127,9 +128,9 @@ public class ZoomManager {
     // funzione che verifica se il punto indicato è sull'immagine
     public boolean isPointOnImage(Point p) {
 
-        boolean test = true;
+        boolean test;
 
-        test = test && (p.getX() >= (int) offset_x);
+        test = (p.getX() >= (int) offset_x);
         test = test && (p.getY() >= (int) offset_y);
 
         test = test && (p.getX() <= (int) (offset_x + zoom * image_w));
@@ -218,10 +219,10 @@ public class ZoomManager {
             double new_zoom;
 
             if (movement) // sto ingrandendo
-                new_zoom = zoom + Constants.ZOOM_STEP;
+                new_zoom = zoom + ZOOM_STEP;
             else
                 // sto diminuendo
-                new_zoom = zoom - Constants.ZOOM_STEP;
+                new_zoom = zoom - ZOOM_STEP;
 
             setZoom(p, new_zoom);
         }
@@ -229,7 +230,7 @@ public class ZoomManager {
 
     // funzione di base per impostare lo zoom
     private void setZoom(Point p, double new_zoom) {
-        double max_zoom = min_zoom + Constants.MAX_ZOOM_INCREMENT;
+        double max_zoom = min_zoom + MAX_ZOOM_INCREMENT;
         if ((new_zoom >= min_zoom) && (new_zoom <= max_zoom)) {
             double old_zoom = zoom;
             zoom = new_zoom;

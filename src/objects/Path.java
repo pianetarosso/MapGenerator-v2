@@ -16,7 +16,7 @@ public class Path {
         return id;
     }
 
-    protected int id;
+    private final int id;
 
     private boolean elevator;
 
@@ -25,7 +25,7 @@ public class Path {
     private String identifier = "";
 
 
-    public Path(Point p, int id) {
+    protected Path(Point p, int id) {
         this.p = p;
         this.a = p;
         this.id = id;

@@ -20,7 +20,7 @@ public class Paths extends ArrayList<Path> {
     public Path drawingPath = null;
     private Path selectedPath = null;
 
-    private MyJPanel myJPanel;
+    private final MyJPanel myJPanel;
 
     public Paths(MyJPanel myJPanel) {
         super();
@@ -87,13 +87,13 @@ public class Paths extends ArrayList<Path> {
     }
 
 
-    public void testCross(Path path, ArrayList<Point> points) {
+    void testCross(Path path, ArrayList<Point> points) {
 
         int min = Math.min(path.getA().getPanelPosition_Y(), path.getP().getPanelPosition_Y());
         int max = Math.max(path.getA().getPanelPosition_Y(), path.getP().getPanelPosition_Y());
 
-        ArrayList<Path> found = new ArrayList<Path>();
-        ArrayList<Point> points_found = new ArrayList<Point>();
+        ArrayList<Path> found = new ArrayList<>();
+        ArrayList<Point> points_found = new ArrayList<>();
 
         // verifico se l'equazione della retta è verticale
         if (path.getP().getPanelPosition_X() == path.getA().getPanelPosition_X()) {
@@ -160,7 +160,7 @@ public class Paths extends ArrayList<Path> {
             // la nostra path originale verrà spezzata in tanti segmenti,
             // ma non c'è modo di sapere su quale di questi segmenti si troverà la
             // prossima intersezione. non c'è un ordinamento.
-            ArrayList<Path> new_paths = new ArrayList<Path>();
+            ArrayList<Path> new_paths = new ArrayList<>();
             new_paths.add(path);
 
             // scansiono l'array delle path trovate, le spezzo e le salvo insieme ai nuovi punti
@@ -270,12 +270,12 @@ public class Paths extends ArrayList<Path> {
     }
 
 
-    public void addElevator(Point point, String identifier) {
+    void addElevator(Point point, String identifier) {
 
         addFloorConnection(point, true, identifier);
     }
 
-    public void addStair(Point point, String identifier) {
+    void addStair(Point point, String identifier) {
 
         addFloorConnection(point, false, identifier);
     }
@@ -292,7 +292,7 @@ public class Paths extends ArrayList<Path> {
 
             if ((path.isElevator() == elevator)
                     && (path.isStair() == !elevator)
-                    && (path.getIdentifier() == identifier)) {
+                    && (path.getIdentifier().equals(identifier))) {
 
 
                 // caso in cui c'è già una linea di ascensori/scale passante per il piano

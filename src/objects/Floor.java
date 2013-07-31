@@ -1,6 +1,6 @@
 package objects;
 
-import graphic.ZoomManager;
+import zoomManager.ZoomManager;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
@@ -11,12 +11,12 @@ import java.util.ArrayList;
 public class Floor {
 
 
-    private int floor;
+    private final int floor;
 
-    private ArrayList<Point> points;
+    private final ArrayList<Point> points;
 
-    private URL link;
-    private int id;
+    private final URL link;
+    private final int id;
 
     private BufferedImage image = null;
 
@@ -26,7 +26,7 @@ public class Floor {
         this.link = link;
         this.id = id;
 
-        points = new ArrayList<Point>();
+        points = new ArrayList<>();
     }
 
     public void loadImage() throws IOException {

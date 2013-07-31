@@ -2,7 +2,7 @@ package objects;
 
 import common.Constants;
 import common.Helper;
-import graphic.ZoomManager;
+import zoomManager.ZoomManager;
 
 /**
  * Created with IntelliJ IDEA.
@@ -11,9 +11,9 @@ import graphic.ZoomManager;
  * Time: 12.51
  * To change this template use File | Settings | File Templates.
  */
-public class Point {
+public class Point implements Constants {
 
-    private int id;
+    private final int id;
     private double x, y;
     private Floor floor;
     private String RFID = null;
@@ -25,7 +25,7 @@ public class Point {
         return zoomManager;
     }
 
-    private ZoomManager zoomManager;
+    private final ZoomManager zoomManager;
 
 
     public int getId() {
@@ -81,7 +81,8 @@ public class Point {
     }
 
     public void setRFID(String RFID) {
-        this.RFID = RFID;
+        if (RFID.length() > 0)
+            this.RFID = RFID;
     }
 
     public boolean isAccess() {
@@ -91,7 +92,7 @@ public class Point {
     public void setAccess(boolean access) {
         this.access = access;
 
-        valid = false || access;
+        valid = access;
     }
 
     // testo se i punti sono troppo vicini tra loro (nel contesto scalato, NON reale)
@@ -101,7 +102,7 @@ public class Point {
             return false;
 
         // se TRUE sono troppo vicini
-        return Helper.testDistance(this, p, Constants.MIN_MARKER_DISTANCE);
+        return Helper.testDistance(this, p, MIN_MARKER_DISTANCE);
     }
 
     // testo se i punti sono troppo vicini tra loro (nel contesto scalato, NON reale)
@@ -110,7 +111,7 @@ public class Point {
         Point pp = new Point(0, p.getX(), p.getY(), floor, zoomManager);
 
         // se TRUE sono troppo vicini
-        return Helper.testDistance(this, pp, Constants.MIN_MARKER_DISTANCE);
+        return Helper.testDistance(this, pp, MIN_MARKER_DISTANCE);
     }
 
 
@@ -123,7 +124,7 @@ public class Point {
     }
 
     public void resetValidation() {
-        valid = false || access;
+        valid = access;
     }
 
     public String toString() {
@@ -131,8 +132,7 @@ public class Point {
                 "RFID: " + RFID + "; " +
                 "Access: " + access + "; " +
                 "X: " + x + "; " +
-                "Y: " + y + "; " +
-                "Floor : " + floor.toString();
+                "Y: " + y;
 
     }
 }

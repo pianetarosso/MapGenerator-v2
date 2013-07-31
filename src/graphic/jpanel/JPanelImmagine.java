@@ -1,9 +1,9 @@
 package graphic.jpanel;
 
-import common.Constants;
-import communication.WithJS;
+import communication.ToJS;
 import graphic.marker.Marker;
 import objects.Floor;
+import zoomManager.ZoomManagerDelegate;
 
 import java.awt.*;
 import java.awt.event.MouseEvent;
@@ -17,10 +17,10 @@ import java.awt.event.MouseMotionListener;
  * Time: 15.57
  * To change this template use File | Settings | File Templates.
  */
-public class JPanelImmagine extends MyJPanel implements MouseListener, MouseMotionListener {
+public class JPanelImmagine extends MyJPanel implements MouseListener, MouseMotionListener, ZoomManagerDelegate {
 
 
-    public JPanelImmagine(Floor[] floors, WithJS cwjs) {
+    public JPanelImmagine(Floor[] floors, ToJS cwjs) {
 
         super(floors, cwjs);
 
@@ -30,6 +30,7 @@ public class JPanelImmagine extends MyJPanel implements MouseListener, MouseMoti
     }
 
     // rendo evidente il costruttore del listener per il ridimensionamento
+    @Override
     public void addResizeListener(Container cp) {
         zoomManager.changeSizeListener(cp);
     }
@@ -40,39 +41,48 @@ public class JPanelImmagine extends MyJPanel implements MouseListener, MouseMoti
             return;
 
 
-        if (type == Constants.mouseClicked) {
+        switch (type) {
 
-            // individuo la path più vicina cliccata
-            paths.drawingPath = null;
+            case mouseClicked:
 
-            if (paths.setSelectedPath(createPoint(arg0))) {
-                this.stopAll(true);
-                withJS.sendPath();
-                this.updatePanel();
-            }
-
-        } else if (type == Constants.mousePressed) {
-
-            // inizio il disegno di una path
-            if (paths.drawingPath == null) {
-                paths.setSelectedPath(null);
-                paths.setDrawingPath(createPoint(arg0), points);
-            }
-
-        } else if (type == Constants.mouseReleased) {
-
-            // termino il disegno di una path
-            if (paths.drawingPath != null)
-                paths.saveDrawingPath(createPoint(arg0), points);
-
-        } else if (type == Constants.mouseDragged) {
-
-            // continuo a disegnare una path
-            if (paths.drawingPath != null)
-                paths.updateDrawingPath(createPoint(arg0));
-            else
+                // individuo la path più vicina cliccata
                 paths.drawingPath = null;
 
+                if (paths.setSelectedPath(createPoint(arg0))) {
+                    this.stopAll(true);
+                    toJS.sendPath();
+                    this.updatePanel();
+                }
+
+                break;
+
+            case mousePressed:
+
+                // inizio il disegno di una path
+                if (paths.drawingPath == null) {
+                    paths.setSelectedPath(null);
+                    paths.setDrawingPath(createPoint(arg0), points);
+                }
+
+                break;
+
+            case mouseReleased:
+
+                // termino il disegno di una path
+                if (paths.drawingPath != null)
+                    paths.saveDrawingPath(createPoint(arg0), points);
+
+                break;
+
+            case mouseDragged:
+
+                // continuo a disegnare una path
+                if (paths.drawingPath != null)
+                    paths.updateDrawingPath(createPoint(arg0));
+                else
+                    paths.drawingPath = null;
+
+                break;
         }
 
 
@@ -84,7 +94,7 @@ public class JPanelImmagine extends MyJPanel implements MouseListener, MouseMoti
     public void mouseDragged(MouseEvent arg0) {
 
         if (isPathType())
-            pathListener(arg0, Constants.mouseDragged);
+            pathListener(arg0, mouseDragged);
 
     }
 
@@ -92,7 +102,7 @@ public class JPanelImmagine extends MyJPanel implements MouseListener, MouseMoti
     public void mousePressed(MouseEvent arg0) {
 
         if (isPathType())
-            pathListener(arg0, Constants.mousePressed);
+            pathListener(arg0, mousePressed);
 
     }
 
@@ -100,7 +110,7 @@ public class JPanelImmagine extends MyJPanel implements MouseListener, MouseMoti
     public void mouseReleased(MouseEvent arg0) {
 
         if (isPathType())
-            pathListener(arg0, Constants.mouseReleased);
+            pathListener(arg0, mouseReleased);
 
     }
 
@@ -115,7 +125,7 @@ public class JPanelImmagine extends MyJPanel implements MouseListener, MouseMoti
         if (isMarkerType())
             MarkerListener(arg0);
         else if (isPathType())
-            pathListener(arg0, Constants.mouseClicked);
+            pathListener(arg0, mouseClicked);
     }
 
     @Override
@@ -178,22 +188,13 @@ public class JPanelImmagine extends MyJPanel implements MouseListener, MouseMoti
             // creo un nuovo marker
             Marker marker = new Marker(found, this);
 
-            // aggiungo l'oggetto al JPanel principale
-            this.add(marker);
-
-            // imposto la posizione dell'oggetto sul JPanel
-            marker.setBounds();
-
-            marker.setVisible(true);
-            marker.setEnabled(true);
-
             markers.setSelected(marker);
 
             this.updatePanel();
 
             // comunico al JS che ho creato un nuovo marker
             // e aspetto che restituisca i dati del marker
-            withJS.newMarker();
+            toJS.newMarker();
 
 
         }

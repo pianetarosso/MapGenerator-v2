@@ -15,16 +15,16 @@ import java.io.IOException;
  */
 // FUNZIONI PER IL CARICAMENTO ASINCRONO DELLE IMMAGINI, CON CONSEGUENTE ABILITAZIONE ////////////////
 // DEI METODI DI INPUT DELLA PAGINA
-public class LoadImages implements Runnable {
+public class LoadImages implements Runnable, Constants {
 
-    private final WithJS cwjs;
-    private Floor[] floors;
+    private final ToJS toJS;
+    private final Floor[] floors;
     private final MyJApplet myJApplet;
 
-    public LoadImages(Floor[] floors, WithJS cwjs, MyJApplet myJApplet) {
+    public LoadImages(Floor[] floors, ToJS toJS, MyJApplet myJApplet) {
 
         this.floors = floors;
-        this.cwjs = cwjs;
+        this.toJS = toJS;
         this.myJApplet = myJApplet;
 
         Thread ct = Thread.currentThread();
@@ -37,14 +37,13 @@ public class LoadImages implements Runnable {
     public void run() {
         try {
 
-            for (int i = 0; i < floors.length; i++) {
-                Floor f = floors[i];
+            for (Floor f : floors) {
                 f.loadImage();
             }
 
             myJApplet.setFloor(floors[0].getFloor());
-            myJApplet.setOperation(Constants.TYPE_MARKER);
-            cwjs.enableInput();
+            myJApplet.setOperation(TYPE_MARKER);
+            toJS.enableInput();
         } catch (IOException e) {
         }
 

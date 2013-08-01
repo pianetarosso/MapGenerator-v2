@@ -62,7 +62,6 @@ public class MapGenerator extends MyJApplet {
         jPanelImmagine.stopAll(false);
         jPanelImmagine.updatePanel();
 
-
         toJS.debug(jPanelImmagine.getMarkers().toString());
 
         debug();
@@ -115,6 +114,8 @@ public class MapGenerator extends MyJApplet {
                 room_people,
                 room_link,
                 room_other);
+
+        jPanelImmagine.getMarkers().resetSelection();
     }
 
 

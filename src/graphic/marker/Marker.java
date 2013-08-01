@@ -77,6 +77,7 @@ public class Marker extends MyMouseListeners implements Constants {
 
         out += "Elevator: " + elevator + "; ";
         out += "Stair: " + stair + "; ";
+        out += "Clicked: " + isClicked();
 
         return out;
     }

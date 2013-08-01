@@ -27,6 +27,11 @@ abstract class MyJComponent extends JComponent implements Constants {
 
     public void setClicked(boolean clicked) {
         this.clicked = clicked;
+
+        if (!clicked)
+            mouseEntered = false;
+
+        this.repaint();
     }
 
     private boolean clicked = false;
@@ -81,7 +86,11 @@ abstract class MyJComponent extends JComponent implements Constants {
     @Override
     public void paintComponent(Graphics g) {
 
+        // aggiorno la posizione dell'oggetto sulla mappa
+        this.setBounds();
+
         super.paintComponent(g);
+
 
         // abilito l'anti-aliasing
         Graphics2D antiAlias = (Graphics2D) g;
@@ -116,18 +125,15 @@ abstract class MyJComponent extends JComponent implements Constants {
 
 
         // gestisco la selezione
-        if ((clicked || mouseEntered) && jPanelImmagine.isMarkerType())
+        if (clicked || (mouseEntered && jPanelImmagine.isMarkerType()))
             g.setColor(SELECTED_COLOR);
         else
             g.setColor(NOT_SELECTED_COLOR);
-        g.drawOval(0, 0, DIAMETER - 1, DIAMETER - 1);
 
-        // aggiorno la posizione dell'oggetto sulla mappa
-        this.setBounds();
+        g.drawOval(0, 0, DIAMETER - 1, DIAMETER - 1);
 
         this.repaint();
     }
-
 
     public Point getPoint() {
         return point;

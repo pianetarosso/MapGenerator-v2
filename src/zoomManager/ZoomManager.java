@@ -70,6 +70,10 @@ public class ZoomManager implements Constants {
         setInitialZoom();
     }
 
+    public void resetZoom() {
+        setInitialZoom();
+    }
+
     // funzione per il calcolo dello zoom e il posizionamento centrato
     // dell'immagine
     // durante il DRAW

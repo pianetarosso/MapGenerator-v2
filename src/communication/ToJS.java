@@ -84,7 +84,9 @@ public class ToJS implements ToJsSpecification, Constants {
 
         Object[] out = new String[]{"", "", "", "", "", "", "", ""};
 
-        out[0] = m.getPoint().getRFID();
+        if (m.getPoint().getRFID() != null)
+            out[0] = m.getPoint().getRFID();
+
         out[1] = m.getPoint().isAccess() + "";
 
         if (m.getStair() != null)

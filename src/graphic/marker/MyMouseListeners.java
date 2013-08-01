@@ -42,11 +42,17 @@ abstract class MyMouseListeners extends MyJComponent implements MouseListener, M
 
             jPanelImmagine.stopAll(true);
             jPanelImmagine.getMarkers().setSelected(marker);
-            arg0.consume();
+
             jPanelImmagine.toJS.sendMarker(jPanelImmagine.getMarkers().getSelected());
-            // inviare i dati del marker fuori per l'editing
-        } else
-            jPanelImmagine.mouseClicked(arg0);
+
+            arg0.consume();
+            jPanelImmagine.updatePanel();
+
+        } else {
+            MouseEvent arg = new MouseEvent(arg0.getComponent(), arg0.getID(), arg0.getWhen(), arg0.getModifiersEx(), point.getPanelPosition_X(), point.getPanelPosition_Y(), arg0.getClickCount(), arg0.isPopupTrigger());
+            jPanelImmagine.mouseClicked(arg);
+        }
+
     }
 
 
@@ -57,6 +63,8 @@ abstract class MyMouseListeners extends MyJComponent implements MouseListener, M
         if (jPanelImmagine.isMarkerType()) {
             mouseEntered = true;
             arg0.consume();
+
+            this.repaint();
         }
     }
 
@@ -65,6 +73,8 @@ abstract class MyMouseListeners extends MyJComponent implements MouseListener, M
         if (jPanelImmagine.isMarkerType()) {
             mouseEntered = false;
             arg0.consume();
+
+            this.repaint();
         }
     }
 
@@ -78,40 +88,47 @@ abstract class MyMouseListeners extends MyJComponent implements MouseListener, M
     @Override
     public void mouseDragged(MouseEvent arg0) {
 
-        Point p = arg0.getPoint();
+        if (jPanelImmagine.isMarkerType() && moveMarker) {
+            Point p = arg0.getPoint();
 
-        if (jPanelImmagine.isMarkerType()
-                && moveMarker
-                && zoomManager.isPointOnImage(p)) {
+            jPanelImmagine.toJS.debug("ARG0: " + p.x + " " + p.y + "\nPOINT: " + point.getPanelPosition_X() + " " + point.getPanelPosition_Y());
 
-            // correggo le coordinate, quelle lette infatti sono in relazione
-            // alla posizione in alto a sx del marker
-            p.x = p.x + point.getPanelPosition_X() - DIAMETER / 2;
-            p.y = p.y + point.getPanelPosition_Y() - DIAMETER / 2;
+            p.x += point.getPanelPosition_X() - DIAMETER / 2;
+            p.y += point.getPanelPosition_Y() - DIAMETER / 2;
 
-            objects.Point tp = new objects.Point(0, p.x, p.y, jPanelImmagine.getFloor(), zoomManager);
+            jPanelImmagine.toJS.debug("NEW ARG0: " + p.x + " " + p.y);
 
-            for (objects.Point otp : jPanelImmagine.getPoints()) {
-                if (otp.isNear(tp)) {
-                    moveMarker = false;
-                    break;
+            if (zoomManager.isPointOnImage(p)) {
+
+                objects.Point tp = new objects.Point(jPanelImmagine.getId(), p.x, p.y, jPanelImmagine.getFloor(), zoomManager);
+                jPanelImmagine.toJS.debug("NEW POINT: " + tp.getPanelPosition_X() + " " + tp.getPanelPosition_Y());
+
+                for (objects.Point otp : jPanelImmagine.getPoints()) {
+                    if (otp.isNear(tp) && (otp != point)) {
+                        moveMarker = false;
+                        break;
+                    }
                 }
-            }
 
-            for (Path otp : jPanelImmagine.getPaths()) {
+                for (Path otp : jPanelImmagine.getPaths()) {
 
-                if (otp.contains(tp) != null) {
-                    moveMarker = false;
-                    break;
+                    if ((otp.getP() != tp) && (otp.getA() != tp))
+                        if (otp.contains(tp) != null) {
+                            moveMarker = false;
+                            break;
+                        }
                 }
-            }
 
-            if (moveMarker) {
-                point.setX(p.getX());
-                point.setY(p.getY());
+                if (moveMarker) {
+                    point.setX(p.getX());
+                    point.setY(p.getY());
+                }
+
+
             }
+            jPanelImmagine.updatePanel();
+            arg0.consume();
         }
-        arg0.consume();
     }
 
 
@@ -128,8 +145,6 @@ abstract class MyMouseListeners extends MyJComponent implements MouseListener, M
 
         if (jPanelImmagine.isMarkerType()) {
             moveMarker = false;
-
-            // aggiungere controllo per le path nel caso si sovrappongano dopo lo spostamento del marker (funzione cross)
             arg0.consume();
         }
     }

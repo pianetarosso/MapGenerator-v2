@@ -119,7 +119,6 @@ public class JPanelImmagine extends MyJPanel implements MouseListener, MouseMoti
     }
 
     @Override
-
     public void mouseClicked(MouseEvent arg0) {
 
         if (isMarkerType())

@@ -60,10 +60,10 @@ public interface Constants {
     public static final Color TRANSPARENT_COLOR = new Color(0, 0, 0, 0);
 
     // Colore bordo durante passaggio sopra con il mouse
-    public static final Color SELECTED_COLOR = Color.gray;
+    public static final Color SELECTED_COLOR = Color.green;
 
     // Colore bordo se il marker non è selezionato
-    public static final Color NOT_SELECTED_COLOR = Color.green;
+    public static final Color NOT_SELECTED_COLOR = Color.gray;
 
     // colore del marker se la validatzione non è corretta
     public static final Color VALIDATED_COLOR = Color.green;

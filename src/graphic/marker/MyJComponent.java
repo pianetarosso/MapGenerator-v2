@@ -75,19 +75,9 @@ abstract class MyJComponent extends JComponent implements Constants {
 
     // METODI VARI //
 
-    public void setCoordinates(double x, double y) {
-        point.setX(x);
-        point.setY(y);
-
-        this.repaint();
-    }
-
     // funzione per disegnare l'oggetto
     @Override
     public void paintComponent(Graphics g) {
-
-        // aggiorno la posizione dell'oggetto sulla mappa
-        this.setBounds();
 
         super.paintComponent(g);
 
@@ -131,6 +121,9 @@ abstract class MyJComponent extends JComponent implements Constants {
             g.setColor(NOT_SELECTED_COLOR);
 
         g.drawOval(0, 0, DIAMETER - 1, DIAMETER - 1);
+
+        // aggiorno la posizione dell'oggetto sulla mappa
+        this.setBounds();
 
         this.repaint();
     }

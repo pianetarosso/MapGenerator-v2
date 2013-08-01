@@ -17,10 +17,9 @@ import java.util.ArrayList;
 public class Paths extends ArrayList<Path> {
 
 
+    private final MyJPanel myJPanel;
     public Path drawingPath = null;
     private Path selectedPath = null;
-
-    private final MyJPanel myJPanel;
 
     public Paths(MyJPanel myJPanel) {
         super();
@@ -85,7 +84,6 @@ public class Paths extends ArrayList<Path> {
 
         drawingPath = null;
     }
-
 
     void testCross(Path path, ArrayList<Point> points) {
 
@@ -268,7 +266,6 @@ public class Paths extends ArrayList<Path> {
         }
         return false;
     }
-
 
     void addElevator(Point point, String identifier) {
 
@@ -468,7 +465,6 @@ public class Paths extends ArrayList<Path> {
 
         return out;
     }
-
 
     // resetto le impostazioni del drawing e della selezione
     public void reset() {

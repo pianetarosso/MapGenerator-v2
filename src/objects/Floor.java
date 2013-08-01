@@ -1,7 +1,5 @@
 package objects;
 
-import zoomManager.ZoomManager;
-
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
@@ -39,21 +37,6 @@ public class Floor {
 
     public int getFloor() {
         return floor;
-    }
-
-
-    public Point addPoint(double x, double y, ZoomManager zoomManager, int counter) {
-
-        Point p = new Point(counter, x, y, this, zoomManager);
-
-        for (Point point : points)
-            if (p.isNear(point))
-                return point;
-
-
-        points.add(p);
-
-        return p;
     }
 
 

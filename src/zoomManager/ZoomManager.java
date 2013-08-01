@@ -1,6 +1,7 @@
 package zoomManager;
 
 import common.Constants;
+import graphic.marker.Markers;
 
 import javax.swing.*;
 import java.awt.*;
@@ -15,14 +16,6 @@ public class ZoomManager implements Constants {
 
     // VARIABILI
     // ////////////////////////////////////////////////////////////////////////
-
-    public double getZoom() {
-        return zoom;
-    }
-
-    public void setZoom(double zoom) {
-        this.zoom = zoom;
-    }
 
     // variabili che gestiscono lo zoom e lo zoom minimo dell'immagine
     private double zoom = 1.0;
@@ -48,12 +41,15 @@ public class ZoomManager implements Constants {
     // componente che controlla il movimento del JScrollPane
     private JViewport viewport;
 
+    private final Markers markers;
+
     // METODI BASE
     // /////////////////////////////////////////////////////////////////////////
 
     // costruttore
-    public ZoomManager(JPanel imagebox) {
+    public ZoomManager(JPanel imagebox, Markers markers) {
         setJPanelObject(imagebox);
+        this.markers = markers;
     }
 
     // abilita / disabilita lo zoom
@@ -238,6 +234,7 @@ public class ZoomManager implements Constants {
         if ((new_zoom >= min_zoom) && (new_zoom <= max_zoom)) {
             double old_zoom = zoom;
             zoom = new_zoom;
+            markers.refresh();
             imagebox.setPreferredSize(new Dimension((int) (image_w * zoom),
                     (int) (image_h * zoom)));
             mantainZoomedPosition(p, old_zoom);

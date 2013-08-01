@@ -36,9 +36,9 @@ public class MyJPanel extends JPanel implements Constants {
         return points;
     }
 
-    protected final Markers markers;
-    protected final Paths paths;
-    protected final ArrayList<objects.Point> points;
+    final Markers markers;
+    final Paths paths;
+    final ArrayList<objects.Point> points;
 
     // piano selezionato
     Floor floor = null;
@@ -71,13 +71,12 @@ public class MyJPanel extends JPanel implements Constants {
         // imposto il background
         setBackground(BACKGROUND);
 
-        // creo uno ZoomManager
-        zoomManager = new ZoomManager(this);
-
-        markers = new Markers(toJS);
+        markers = new Markers();
         paths = new Paths(this);
         points = new ArrayList<>();
 
+        // creo uno ZoomManager
+        zoomManager = new ZoomManager(this, markers);
     }
 
     public int getId() {
@@ -113,7 +112,6 @@ public class MyJPanel extends JPanel implements Constants {
     public void updatePanel() {
         this.revalidate();
         this.repaint();
-        markers.refresh();
     }
 
     // blocco movimento e creazione di punti, path, oltre allo zoom e al movimento
@@ -181,7 +179,7 @@ public class MyJPanel extends JPanel implements Constants {
         return type.equals(TYPE_MARKER);
     }
 
-    public boolean isPathType() {
+    boolean isPathType() {
         return type.equals(TYPE_PATH);
     }
 

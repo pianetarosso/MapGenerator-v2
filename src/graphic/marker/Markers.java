@@ -1,6 +1,5 @@
 package graphic.marker;
 
-import communication.ToJS;
 import graphic.jpanel.JPanelImmagine;
 import graphic.jpanel.MyJPanel;
 import graphic.path.Paths;
@@ -29,15 +28,6 @@ public class Markers extends ArrayList<Marker> {
         }
     }
 
-    public void setSelected() {
-
-        for (Marker m : this)
-            if (m.isClicked()) {
-                this.selected = m;
-                break;
-            }
-    }
-
     public void setSelected(Marker m) {
 
         resetSelection();
@@ -47,22 +37,9 @@ public class Markers extends ArrayList<Marker> {
     }
 
     public void refresh() {
-        for (Marker m : this) {
-            m.repaint();
-
-        }
-    }
-
-    public void setSelected(java.awt.Point p) {
-
-        resetSelection();
-
         for (Marker m : this)
-            if (m.contains(p)) {
-                m.setClicked(true);
-                selected = m;
-                break;
-            }
+            if (m.isVisible())
+                m.setBounds();
     }
 
     public Marker getSelected() {
@@ -79,11 +56,9 @@ public class Markers extends ArrayList<Marker> {
     }
 
     private Marker selected = null;
-    ToJS toJS;
 
-    public Markers(ToJS toJS) {
+    public Markers() {
         super();
-        this.toJS = toJS;
     }
 
     public void delete(Paths paths, ArrayList<Point> points, MyJPanel myJPanel) {

@@ -9,18 +9,13 @@
     <bookmark url="file://$PROJECT_DIR$/src/common/Helper.java" line="4" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7419bf70-79a3-439b-b922-96d855cc384a" name="Default" comment="Debugging">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/marco.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/common/Constants.java" afterPath="$PROJECT_DIR$/src/common/Constants.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/graphic/jpanel/JPanelImmagine.java" afterPath="$PROJECT_DIR$/src/graphic/jpanel/JPanelImmagine.java" />
+    <list default="true" id="7419bf70-79a3-439b-b922-96d855cc384a" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/objects/Floor.java" afterPath="$PROJECT_DIR$/src/objects/Floor.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/mapGenerator/MapGenerator.java" afterPath="$PROJECT_DIR$/src/mapGenerator/MapGenerator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/graphic/marker/Marker.java" afterPath="$PROJECT_DIR$/src/graphic/marker/Marker.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/graphic/marker/Markers.java" afterPath="$PROJECT_DIR$/src/graphic/marker/Markers.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/graphic/marker/MyJComponent.java" afterPath="$PROJECT_DIR$/src/graphic/marker/MyJComponent.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/graphic/jpanel/MyJPanel.java" afterPath="$PROJECT_DIR$/src/graphic/jpanel/MyJPanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/graphic/marker/MyMouseListeners.java" afterPath="$PROJECT_DIR$/src/graphic/marker/MyMouseListeners.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/communication/ToJS.java" afterPath="$PROJECT_DIR$/src/communication/ToJS.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/graphic/path/Paths.java" afterPath="$PROJECT_DIR$/src/graphic/path/Paths.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/zoomManager/ZoomManager.java" afterPath="$PROJECT_DIR$/src/zoomManager/ZoomManager.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -39,22 +34,22 @@
     <file path="/Points.java" changelist="7419bf70-79a3-439b-b922-96d855cc384a" time="1374152620111" ignored="false" />
     <file path="/Floor.java" changelist="7419bf70-79a3-439b-b922-96d855cc384a" time="1374593445442" ignored="false" />
     <file path="/MapGenerator.java" changelist="7419bf70-79a3-439b-b922-96d855cc384a" time="1375301530434" ignored="false" />
-    <file path="/ZoomManager.java" changelist="7419bf70-79a3-439b-b922-96d855cc384a" time="1375352833906" ignored="false" />
+    <file path="/ZoomManager.java" changelist="7419bf70-79a3-439b-b922-96d855cc384a" time="1375354742238" ignored="false" />
     <file path="/MoveManager.java" changelist="7419bf70-79a3-439b-b922-96d855cc384a" time="1374154062069" ignored="false" />
     <file path="/Editor.java" changelist="7419bf70-79a3-439b-b922-96d855cc384a" time="1374154371255" ignored="false" />
     <file path="/LoadIMages.java" changelist="7419bf70-79a3-439b-b922-96d855cc384a" time="1374158933322" ignored="false" />
     <file path="/MyMouseListener.java" changelist="7419bf70-79a3-439b-b922-96d855cc384a" time="1374156997481" ignored="false" />
     <file path="/JPanelImmagine.java" changelist="7419bf70-79a3-439b-b922-96d855cc384a" time="1375254698019" ignored="false" />
     <file path="$PROJECT_DIR$/../MapGenerator/src/gestore_immagini/JPanelImmagine.java" changelist="7419bf70-79a3-439b-b922-96d855cc384a" time="1374156412407" ignored="false" />
-    <file path="/MyJPanel.java" changelist="7419bf70-79a3-439b-b922-96d855cc384a" time="1375353810988" ignored="false" />
+    <file path="/MyJPanel.java" changelist="7419bf70-79a3-439b-b922-96d855cc384a" time="1375354790099" ignored="false" />
     <file path="/DrawableMarker.java" changelist="7419bf70-79a3-439b-b922-96d855cc384a" time="1374161349541" ignored="false" />
     <file path="/ActionMarker.java" changelist="7419bf70-79a3-439b-b922-96d855cc384a" time="1374161463837" ignored="false" />
     <file path="/Marker.java" changelist="7419bf70-79a3-439b-b922-96d855cc384a" time="1375345229627" ignored="false" />
     <file path="/CustomPoint.java" changelist="7419bf70-79a3-439b-b922-96d855cc384a" time="1374159830118" ignored="false" />
-    <file path="/Dummy.txt" changelist="7419bf70-79a3-439b-b922-96d855cc384a" time="1375354168999" ignored="false" />
+    <file path="/Dummy.txt" changelist="7419bf70-79a3-439b-b922-96d855cc384a" time="1375354182213" ignored="false" />
     <file path="/MyMouseListeners.java" changelist="7419bf70-79a3-439b-b922-96d855cc384a" time="1375351982173" ignored="false" />
     <file path="/MyJComponent.java" changelist="7419bf70-79a3-439b-b922-96d855cc384a" time="1375349456843" ignored="false" />
-    <file path="/Markers.java" changelist="7419bf70-79a3-439b-b922-96d855cc384a" time="1375354054434" ignored="false" />
+    <file path="/Markers.java" changelist="7419bf70-79a3-439b-b922-96d855cc384a" time="1375355173577" ignored="false" />
     <file path="/Paths.java" changelist="7419bf70-79a3-439b-b922-96d855cc384a" time="1375260347425" ignored="false" />
     <file path="$PROJECT_DIR$/../MapGenerator/src/objects/CustomPoint.java" changelist="7419bf70-79a3-439b-b922-96d855cc384a" time="1374308346427" ignored="false" />
     <file path="/WithJS.java" changelist="7419bf70-79a3-439b-b922-96d855cc384a" time="1375178753172" ignored="false" />
@@ -137,39 +132,55 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MapGenerator.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/mapGenerator/MapGenerator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="64" column="13" selection-start="1554" selection-end="1554" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MyJApplet.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/mapGenerator/MyJApplet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="84" column="33" selection-start="2183" selection-end="2183" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="MyJPanel.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/graphic/jpanel/MyJPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="115" column="19" selection-start="2806" selection-end="2806" vertical-scroll-proportion="0.0">
+            <state line="73" column="30" selection-start="1688" selection-end="1688" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ZoomManager.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/zoomManager/ZoomManager.java">
+      <file leaf-file-name="Constants.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/common/Constants.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="189" column="34" selection-start="5399" selection-end="5399" vertical-scroll-proportion="0.0">
+            <state line="4" column="0" selection-start="37" selection-end="37" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FromJsSpecification.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/communication/FromJsSpecification.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="0" selection-start="24" selection-end="24" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Paths.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/graphic/path/Paths.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="444" column="19" selection-start="12681" selection-end="12681" vertical-scroll-proportion="0.3320965">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Helper.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/common/Helper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="4" column="0" selection-start="40" selection-end="40" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ToJS.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/communication/ToJS.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="30" column="19" selection-start="629" selection-end="629" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -180,19 +191,10 @@
       <file leaf-file-name="MyJComponent.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/graphic/marker/MyJComponent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="87" column="8" selection-start="1956" selection-end="1956" vertical-scroll-proportion="0.0">
+            <state line="77" column="4" selection-start="1730" selection-end="1730" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Markers.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/graphic/marker/Markers.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="51" column="12" selection-start="1045" selection-end="1045" vertical-scroll-proportion="0.4180791">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -200,7 +202,7 @@
       <file leaf-file-name="Marker.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/graphic/marker/Marker.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="9" selection-start="803" selection-end="803" vertical-scroll-proportion="0.0">
+            <state line="19" column="16" selection-start="410" selection-end="410" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -208,30 +210,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MyMouseListeners.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/graphic/marker/MyMouseListeners.java">
+      <file leaf-file-name="Path.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/graphic/path/Path.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="10" selection-start="692" selection-end="692" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Constants.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/common/Constants.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="77" column="28" selection-start="2513" selection-end="2513" vertical-scroll-proportion="0.0">
+            <state line="68" column="16" selection-start="1908" selection-end="1908" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="JPanelImmagine.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/graphic/jpanel/JPanelImmagine.java">
+      <file leaf-file-name="ZoomManagerDelegate.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/zoomManager/ZoomManagerDelegate.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="191" column="24" selection-start="4879" selection-end="4879" vertical-scroll-proportion="-81.16">
+            <state line="14" column="13" selection-start="283" selection-end="283" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -261,9 +252,7 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/src/mapGenerator/MyJApplet.java" />
-        <option value="$PROJECT_DIR$/src/objects/Floor.java" />
         <option value="$PROJECT_DIR$/src/communication/LoadImages.java" />
-        <option value="$PROJECT_DIR$/src/graphic/path/Paths.java" />
         <option value="$PROJECT_DIR$/src/objects/Point.java" />
         <option value="$PROJECT_DIR$/src/graphic/marker/MyMouseListenerDelegate.java" />
         <option value="$PROJECT_DIR$/src/communication/ToJS.java" />
@@ -273,9 +262,11 @@
         <option value="$PROJECT_DIR$/src/graphic/marker/MyMouseListeners.java" />
         <option value="$PROJECT_DIR$/src/graphic/jpanel/JPanelImmagine.java" />
         <option value="$PROJECT_DIR$/src/zoomManager/ZoomManager.java" />
+        <option value="$PROJECT_DIR$/src/objects/Floor.java" />
+        <option value="$PROJECT_DIR$/src/graphic/marker/Markers.java" />
         <option value="$PROJECT_DIR$/src/graphic/marker/MyJComponent.java" />
         <option value="$PROJECT_DIR$/src/graphic/jpanel/MyJPanel.java" />
-        <option value="$PROJECT_DIR$/src/graphic/marker/Markers.java" />
+        <option value="$PROJECT_DIR$/src/graphic/path/Paths.java" />
       </list>
     </option>
   </component>
@@ -851,7 +842,11 @@
       <created>1375286165708</created>
       <updated>1375286165708</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Debugging">
+      <created>1375354202562</created>
+      <updated>1375354202562</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers>
       <GitHub shared="false">
         <commitMessageFormat>{id} {summary}</commitMessageFormat>
@@ -885,12 +880,12 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24335378" sideWeight="0.67445743" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24335378" sideWeight="0.6010017" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39899832" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32888147" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24948876" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39899832" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -963,88 +958,10 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/common/Helper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="26" selection-start="760" selection-end="760" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/graphic/path/Path.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="132" column="25" selection-start="3675" selection-end="3675" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/communication/FromJsSpecification.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="17" selection-start="192" selection-end="192" vertical-scroll-proportion="-0.65217394">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/communication/ToJsSpecification.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="17" selection-start="267" selection-end="267" vertical-scroll-proportion="0.29891303">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/communication/ToJS.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="88" column="8" selection-start="1974" selection-end="1974" vertical-scroll-proportion="0.38768116">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/objects/Point.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="134" column="25" selection-start="2974" selection-end="2974" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/common/Constants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="77" column="28" selection-start="2513" selection-end="2513" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/mapGenerator/MapGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="13" selection-start="1554" selection-end="1554" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/mapGenerator/MyJApplet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="84" column="33" selection-start="2183" selection-end="2183" vertical-scroll-proportion="0.0">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/zoomManager/ZoomManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="189" column="34" selection-start="5399" selection-end="5399" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/graphic/marker/Marker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="9" selection-start="803" selection-end="803" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1057,32 +974,110 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/graphic/marker/MyJComponent.java">
+    <entry file="file://$PROJECT_DIR$/src/graphic/jpanel/JPanelImmagine.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="87" column="8" selection-start="1956" selection-end="1956" vertical-scroll-proportion="0.0">
+        <state line="191" column="24" selection-start="4879" selection-end="4879" vertical-scroll-proportion="2.2">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/zoomManager/ZoomManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="236" column="30" selection-start="6997" selection-end="6997" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/graphic/jpanel/JPanelImmagine.java">
+    <entry file="file://$PROJECT_DIR$/src/objects/Floor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="191" column="24" selection-start="4879" selection-end="4879" vertical-scroll-proportion="-81.16">
+        <state line="44" column="4" selection-start="779" selection-end="779" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/graphic/marker/Markers.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="58" column="35" selection-start="1167" selection-end="1167" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/graphic/marker/MyJComponent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="77" column="4" selection-start="1730" selection-end="1730" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/graphic/marker/Marker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="16" selection-start="410" selection-end="410" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/graphic/path/Path.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="68" column="16" selection-start="1908" selection-end="1908" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/zoomManager/ZoomManagerDelegate.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="13" selection-start="283" selection-end="283" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/graphic/jpanel/MyJPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="115" column="19" selection-start="2806" selection-end="2806" vertical-scroll-proportion="0.0">
+        <state line="73" column="30" selection-start="1688" selection-end="1688" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/graphic/marker/Markers.java">
+    <entry file="file://$PROJECT_DIR$/src/common/Constants.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="12" selection-start="1045" selection-end="1045" vertical-scroll-proportion="0.4180791">
+        <state line="4" column="0" selection-start="37" selection-end="37" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/communication/FromJsSpecification.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="0" selection-start="24" selection-end="24" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/common/Helper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="0" selection-start="40" selection-end="40" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/communication/ToJS.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="19" selection-start="629" selection-end="629" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/graphic/path/Paths.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="444" column="19" selection-start="12681" selection-end="12681" vertical-scroll-proportion="0.3320965">
           <folding />
         </state>
       </provider>

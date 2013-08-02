@@ -6,7 +6,7 @@ import common.Helper;
 import java.awt.*;
 import java.awt.geom.Line2D;
 
-public class Path extends objects.Path {
+public class Path extends objects.Path implements Constants {
 
 
     // Una PATH può essere tirata da/verso un punto su di un'altra PATH o un MARKER
@@ -41,19 +41,19 @@ public class Path extends objects.Path {
         // disegno del bordo
         g2.setColor(Color.white);
 
-        if (path != null)
-            if (path == this)
-                g2.setColor(Constants.SELECTED_PATH_COLOR);
+        if ((path != null) && (path == this))
+            g2.setColor(SELECTED_PATH_COLOR);
 
-        g2.setStroke(new BasicStroke(Constants.SPESSORE + 2));
+        g2.setStroke(new BasicStroke(SPESSORE + 2));
         g2.draw(line);
 
         // disegno della linea
         if (validated)
-            g2.setColor(Constants.VALIDATED_PATH_COLOR);
+            g2.setColor(VALIDATED_PATH_COLOR);
         else
-            g2.setColor(Constants.NOT_VALIDATED_PATH_COLOR);
-        g2.setStroke(new BasicStroke(Constants.SPESSORE));
+            g2.setColor(NOT_VALIDATED_PATH_COLOR);
+
+        g2.setStroke(new BasicStroke(SPESSORE));
         g2.draw(line);
 
         ///////////////////////////////////////////////////////////
@@ -61,7 +61,7 @@ public class Path extends objects.Path {
 
     // restituisco la lunghezza della path
     public boolean isLengthEnougth() {
-        return Helper.testDistance(p, a, Constants.MINIMUM_PATH_LENGTH);
+        return !Helper.testDistance(p, a, MINIMUM_PATH_LENGTH);
     }
 
 
@@ -89,7 +89,7 @@ public class Path extends objects.Path {
 
         double difference = Math.abs(1 - (m1 / m2));
 
-        if (difference <= Constants.MAX_M_DIFFERENCE) {
+        if (difference <= MAX_M_DIFFERENCE) {
 
             if (p == path.getP())
                 setP(path.getA());
@@ -149,7 +149,7 @@ public class Path extends objects.Path {
 
             if ((ps.getPanelPosition_Y() >= min)
                     && (ps.getPanelPosition_Y() <= max)
-                    && (Math.abs(ps.getPanelPosition_X() - a.getPanelPosition_X()) <= Constants.MIN_PATH_DISTANCE)) {
+                    && (Math.abs(ps.getPanelPosition_X() - a.getPanelPosition_X()) <= MIN_PATH_DISTANCE)) {
 
                 ps.setX(a.getPanelPosition_X());
 
@@ -176,7 +176,7 @@ public class Path extends objects.Path {
             if (Helper.testDistance(
                     new Point(ps.getPanelPosition_X(), ps.getPanelPosition_Y()),
                     out,
-                    Constants.MIN_PATH_DISTANCE)) {
+                    MIN_PATH_DISTANCE)) {
 
                 ps.setX(out.getX());
                 ps.setY(out.getY());

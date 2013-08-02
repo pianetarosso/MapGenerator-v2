@@ -10,26 +10,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7419bf70-79a3-439b-b922-96d855cc384a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/objects/Floor.java" afterPath="$PROJECT_DIR$/src/objects/Floor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/graphic/jpanel/JPanelImmagine.java" afterPath="$PROJECT_DIR$/src/graphic/jpanel/JPanelImmagine.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/graphic/marker/Markers.java" afterPath="$PROJECT_DIR$/src/graphic/marker/Markers.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/graphic/marker/MyJComponent.java" afterPath="$PROJECT_DIR$/src/graphic/marker/MyJComponent.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/mapGenerator/MapGenerator.java" afterPath="$PROJECT_DIR$/src/mapGenerator/MapGenerator.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/graphic/jpanel/MyJPanel.java" afterPath="$PROJECT_DIR$/src/graphic/jpanel/MyJPanel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/graphic/marker/MyMouseListeners.java" afterPath="$PROJECT_DIR$/src/graphic/marker/MyMouseListeners.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/graphic/path/Path.java" afterPath="$PROJECT_DIR$/src/graphic/path/Path.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/objects/Path.java" afterPath="$PROJECT_DIR$/src/objects/Path.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/graphic/path/Paths.java" afterPath="$PROJECT_DIR$/src/graphic/path/Paths.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/zoomManager/ZoomManager.java" afterPath="$PROJECT_DIR$/src/zoomManager/ZoomManager.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="MapGenerator-v2.0.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/fragment.java" changelist="7419bf70-79a3-439b-b922-96d855cc384a" time="1375252735444" ignored="false" />
     <file path="/Constants.java" changelist="7419bf70-79a3-439b-b922-96d855cc384a" time="1375347026421" ignored="false" />
-    <file path="/Helper.java" changelist="7419bf70-79a3-439b-b922-96d855cc384a" time="1375255920112" ignored="false" />
+    <file path="/Helper.java" changelist="7419bf70-79a3-439b-b922-96d855cc384a" time="1375440713298" ignored="false" />
     <file path="/CommunicationWithJS.java" changelist="7419bf70-79a3-439b-b922-96d855cc384a" time="1374155456499" ignored="false" />
     <file path="$PROJECT_DIR$/../iNav_web/iNav/buildings/static/java/generate/step5.base_objects.js" changelist="7419bf70-79a3-439b-b922-96d855cc384a" time="1374144271310" ignored="false" />
     <file path="$PROJECT_DIR$/../iNav_web/iNav/buildings/static/css/style.css" changelist="7419bf70-79a3-439b-b922-96d855cc384a" time="1374144271310" ignored="false" />
     <file path="$PROJECT_DIR$/../iNav_web/templates/buildings/generate_building/step5.html" changelist="7419bf70-79a3-439b-b922-96d855cc384a" time="1374162085641" ignored="false" />
     <file path="/Point.java" changelist="7419bf70-79a3-439b-b922-96d855cc384a" time="1375264413424" ignored="false" />
-    <file path="/Path.java" changelist="7419bf70-79a3-439b-b922-96d855cc384a" time="1374593745305" ignored="false" />
+    <file path="/Path.java" changelist="7419bf70-79a3-439b-b922-96d855cc384a" time="1375439745495" ignored="false" />
     <file path="/Room.java" changelist="7419bf70-79a3-439b-b922-96d855cc384a" time="1374593597246" ignored="false" />
     <file path="/Points.java" changelist="7419bf70-79a3-439b-b922-96d855cc384a" time="1374152620111" ignored="false" />
     <file path="/Floor.java" changelist="7419bf70-79a3-439b-b922-96d855cc384a" time="1374593445442" ignored="false" />
@@ -39,18 +40,18 @@
     <file path="/Editor.java" changelist="7419bf70-79a3-439b-b922-96d855cc384a" time="1374154371255" ignored="false" />
     <file path="/LoadIMages.java" changelist="7419bf70-79a3-439b-b922-96d855cc384a" time="1374158933322" ignored="false" />
     <file path="/MyMouseListener.java" changelist="7419bf70-79a3-439b-b922-96d855cc384a" time="1374156997481" ignored="false" />
-    <file path="/JPanelImmagine.java" changelist="7419bf70-79a3-439b-b922-96d855cc384a" time="1375254698019" ignored="false" />
+    <file path="/JPanelImmagine.java" changelist="7419bf70-79a3-439b-b922-96d855cc384a" time="1375433601544" ignored="false" />
     <file path="$PROJECT_DIR$/../MapGenerator/src/gestore_immagini/JPanelImmagine.java" changelist="7419bf70-79a3-439b-b922-96d855cc384a" time="1374156412407" ignored="false" />
     <file path="/MyJPanel.java" changelist="7419bf70-79a3-439b-b922-96d855cc384a" time="1375354790099" ignored="false" />
     <file path="/DrawableMarker.java" changelist="7419bf70-79a3-439b-b922-96d855cc384a" time="1374161349541" ignored="false" />
     <file path="/ActionMarker.java" changelist="7419bf70-79a3-439b-b922-96d855cc384a" time="1374161463837" ignored="false" />
     <file path="/Marker.java" changelist="7419bf70-79a3-439b-b922-96d855cc384a" time="1375345229627" ignored="false" />
     <file path="/CustomPoint.java" changelist="7419bf70-79a3-439b-b922-96d855cc384a" time="1374159830118" ignored="false" />
-    <file path="/Dummy.txt" changelist="7419bf70-79a3-439b-b922-96d855cc384a" time="1375354182213" ignored="false" />
-    <file path="/MyMouseListeners.java" changelist="7419bf70-79a3-439b-b922-96d855cc384a" time="1375351982173" ignored="false" />
+    <file path="/Dummy.txt" changelist="7419bf70-79a3-439b-b922-96d855cc384a" time="1375428491166" ignored="false" />
+    <file path="/MyMouseListeners.java" changelist="7419bf70-79a3-439b-b922-96d855cc384a" time="1375441346083" ignored="false" />
     <file path="/MyJComponent.java" changelist="7419bf70-79a3-439b-b922-96d855cc384a" time="1375349456843" ignored="false" />
     <file path="/Markers.java" changelist="7419bf70-79a3-439b-b922-96d855cc384a" time="1375355173577" ignored="false" />
-    <file path="/Paths.java" changelist="7419bf70-79a3-439b-b922-96d855cc384a" time="1375260347425" ignored="false" />
+    <file path="/Paths.java" changelist="7419bf70-79a3-439b-b922-96d855cc384a" time="1375441114517" ignored="false" />
     <file path="$PROJECT_DIR$/../MapGenerator/src/objects/CustomPoint.java" changelist="7419bf70-79a3-439b-b922-96d855cc384a" time="1374308346427" ignored="false" />
     <file path="/WithJS.java" changelist="7419bf70-79a3-439b-b922-96d855cc384a" time="1375178753172" ignored="false" />
     <file path="/LoadImages.java" changelist="7419bf70-79a3-439b-b922-96d855cc384a" time="1375252547299" ignored="false" />
@@ -72,6 +73,8 @@
     <file path="/ToJsSpecification.java" changelist="7419bf70-79a3-439b-b922-96d855cc384a" time="1375255066705" ignored="false" />
     <file path="/FromJS.java" changelist="7419bf70-79a3-439b-b922-96d855cc384a" time="1375255726035" ignored="false" />
     <file path="/a.java" changelist="7419bf70-79a3-439b-b922-96d855cc384a" time="1375343604092" ignored="false" />
+    <file path="/step5.java_communication.js" changelist="7419bf70-79a3-439b-b922-96d855cc384a" time="1375428776841" ignored="false" />
+    <file path="$PROJECT_DIR$/../iNav_web/iNav/buildings/static/java/generate/step5.java_communication.js" changelist="7419bf70-79a3-439b-b922-96d855cc384a" time="1375428784150" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,77 +138,37 @@
       <file leaf-file-name="MyJPanel.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/graphic/jpanel/MyJPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="73" column="30" selection-start="1688" selection-end="1688" vertical-scroll-proportion="0.0">
+            <state line="104" column="19" selection-start="2579" selection-end="2579" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Constants.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/common/Constants.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="0" selection-start="37" selection-end="37" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FromJsSpecification.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/communication/FromJsSpecification.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="0" selection-start="24" selection-end="24" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Paths.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Paths.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/graphic/path/Paths.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="444" column="19" selection-start="12681" selection-end="12681" vertical-scroll-proportion="0.3320965">
+            <state line="81" column="62" selection-start="1936" selection-end="1936" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Helper.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/common/Helper.java">
+      <file leaf-file-name="MyMouseListeners.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/graphic/marker/MyMouseListeners.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="0" selection-start="40" selection-end="40" vertical-scroll-proportion="0.0">
+            <state line="171" column="49" selection-start="4491" selection-end="4491" vertical-scroll-proportion="0.9357143">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JPanelImmagine.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/graphic/jpanel/JPanelImmagine.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="72" column="34" selection-start="1911" selection-end="1911" vertical-scroll-proportion="0.0">
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ToJS.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/communication/ToJS.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="19" selection-start="629" selection-end="629" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MyJComponent.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/graphic/marker/MyJComponent.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="77" column="4" selection-start="1730" selection-end="1730" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Marker.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/graphic/marker/Marker.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="16" selection-start="410" selection-end="410" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -213,17 +176,10 @@
       <file leaf-file-name="Path.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/graphic/path/Path.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="68" column="16" selection-start="1908" selection-end="1908" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ZoomManagerDelegate.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/zoomManager/ZoomManagerDelegate.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="13" selection-start="283" selection-end="283" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="63" column="28" selection-start="1736" selection-end="1736" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -251,22 +207,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/mapGenerator/MyJApplet.java" />
-        <option value="$PROJECT_DIR$/src/communication/LoadImages.java" />
-        <option value="$PROJECT_DIR$/src/objects/Point.java" />
         <option value="$PROJECT_DIR$/src/graphic/marker/MyMouseListenerDelegate.java" />
         <option value="$PROJECT_DIR$/src/communication/ToJS.java" />
-        <option value="$PROJECT_DIR$/src/mapGenerator/MapGenerator.java" />
         <option value="$PROJECT_DIR$/src/graphic/marker/Marker.java" />
         <option value="$PROJECT_DIR$/src/common/Constants.java" />
-        <option value="$PROJECT_DIR$/src/graphic/marker/MyMouseListeners.java" />
-        <option value="$PROJECT_DIR$/src/graphic/jpanel/JPanelImmagine.java" />
         <option value="$PROJECT_DIR$/src/zoomManager/ZoomManager.java" />
         <option value="$PROJECT_DIR$/src/objects/Floor.java" />
         <option value="$PROJECT_DIR$/src/graphic/marker/Markers.java" />
         <option value="$PROJECT_DIR$/src/graphic/marker/MyJComponent.java" />
         <option value="$PROJECT_DIR$/src/graphic/jpanel/MyJPanel.java" />
+        <option value="$PROJECT_DIR$/src/mapGenerator/MapGenerator.java" />
+        <option value="$PROJECT_DIR$/src/graphic/jpanel/JPanelImmagine.java" />
+        <option value="$PROJECT_DIR$/src/objects/Path.java" />
+        <option value="$PROJECT_DIR$/src/graphic/path/Path.java" />
         <option value="$PROJECT_DIR$/src/graphic/path/Paths.java" />
+        <option value="$PROJECT_DIR$/src/common/Helper.java" />
+        <option value="$PROJECT_DIR$/src/graphic/marker/MyMouseListeners.java" />
       </list>
     </option>
   </component>
@@ -411,6 +367,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -601,23 +559,21 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="GenerateAntBuildDialog.generateIdeaHomeProperty" value="false" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="38" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="OverrideImplement.combined" value="true" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="39" />
+    <property name="OverrideImplement.combined" value="true" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="Repository.Attach.JavaDocs" value="false" />
-    <property name="GenerateAntBuildDialog.generateSingleFile" value="false" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="38" />
-    <property name="MemberChooser.sorted" value="false" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="38" />
+    <property name="GenerateAntBuildDialog.generateSingleFile" value="false" />
     <property name="recentsLimit" value="5" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
     <property name="GenerateAntBuildDialog.inclineRuntiemClasspath" value="false" />
@@ -632,24 +588,24 @@
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
-    <property name="Repository.Attach.Sources" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="Downloaded.Files.Path" value="$PROJECT_DIR$/lib" />
     <property name="options.splitter.details.proportions" value="0.2" />
-    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
+    <property name="Downloaded.Files.Path" value="$PROJECT_DIR$/lib" />
     <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
     <property name="options.lastSelected" value="preferences.toDoOptions" />
-    <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="GenerateAntBuildDialog.forceTargetJdk" value="true" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="GenerateAntBuildDialog.backupFiles" value="true" />
-    <property name="options.searchVisible" value="true" />
     <property name="dynamic.classpath" value="false" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -694,19 +650,6 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method />
-    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -732,6 +675,19 @@
       <envs />
       <properties />
       <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -846,7 +802,11 @@
       <created>1375354202562</created>
       <updated>1375354202562</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="End of Markers test phase">
+      <created>1375355580814</created>
+      <updated>1375355580815</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers>
       <GitHub shared="false">
         <commitMessageFormat>{id} {summary}</commitMessageFormat>
@@ -880,12 +840,12 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24335378" sideWeight="0.6010017" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39899832" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24335378" sideWeight="0.67111856" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32888147" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24948876" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39899832" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -930,7 +890,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Debugging" />
+    <option name="LAST_COMMIT_MESSAGE" value="End of Markers test phase" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -949,6 +909,7 @@
     <MESSAGE value="Lot of work!" />
     <MESSAGE value="First testing" />
     <MESSAGE value="Debugging" />
+    <MESSAGE value="End of Markers test phase" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -958,38 +919,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/mapGenerator/MyJApplet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="84" column="33" selection-start="2183" selection-end="2183" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/graphic/marker/MyMouseListeners.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="10" selection-start="692" selection-end="692" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/graphic/jpanel/JPanelImmagine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="191" column="24" selection-start="4879" selection-end="4879" vertical-scroll-proportion="2.2">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/zoomManager/ZoomManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="236" column="30" selection-start="6997" selection-end="6997" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/objects/Floor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="44" column="4" selection-start="779" selection-end="779" vertical-scroll-proportion="0.0">
@@ -1006,48 +935,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/graphic/marker/MyJComponent.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="77" column="4" selection-start="1730" selection-end="1730" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/graphic/marker/Marker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="16" selection-start="410" selection-end="410" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/graphic/path/Path.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="68" column="16" selection-start="1908" selection-end="1908" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/zoomManager/ZoomManagerDelegate.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="14" column="13" selection-start="283" selection-end="283" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/graphic/jpanel/MyJPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="73" column="30" selection-start="1688" selection-end="1688" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/common/Constants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="37" selection-end="37" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -1059,16 +949,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/common/Helper.java">
+    <entry file="file://$PROJECT_DIR$/src/graphic/marker/MyJComponent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="40" selection-end="40" vertical-scroll-proportion="0.0">
+        <state line="77" column="4" selection-start="1730" selection-end="1730" vertical-scroll-proportion="-0.7119565">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mapGenerator/MapGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="80" column="8" selection-start="1924" selection-end="1924" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/communication/ToJS.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="19" selection-start="629" selection-end="629" vertical-scroll-proportion="0.0">
+        <state line="110" column="26" selection-start="2510" selection-end="2510" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/graphic/jpanel/MyJPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="104" column="19" selection-start="2579" selection-end="2579" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/common/Constants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="85" column="28" selection-start="2855" selection-end="2855" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/objects/Path.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="33" selection-start="388" selection-end="388" vertical-scroll-proportion="-0.79347825">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/graphic/path/Path.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="63" column="28" selection-start="1736" selection-end="1736" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1077,8 +1002,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/graphic/path/Paths.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="444" column="19" selection-start="12681" selection-end="12681" vertical-scroll-proportion="0.3320965">
+        <state line="81" column="62" selection-start="1936" selection-end="1936" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/common/Helper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="11" selection-start="220" selection-end="227" vertical-scroll-proportion="0.3043478">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/graphic/jpanel/JPanelImmagine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="72" column="34" selection-start="1911" selection-end="1911" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/graphic/marker/Marker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="16" selection-start="410" selection-end="410" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/graphic/marker/MyMouseListeners.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="171" column="49" selection-start="4491" selection-end="4491" vertical-scroll-proportion="0.9357143">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

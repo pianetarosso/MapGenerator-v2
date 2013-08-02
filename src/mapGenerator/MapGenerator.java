@@ -78,6 +78,7 @@ public class MapGenerator extends MyJApplet {
 
         for (Point p : jPanelImmagine.getPoints())
             toJS.debug(p.toString());
+
     }
     ///////////////////////////////////////////////////////////////////////////////////
 

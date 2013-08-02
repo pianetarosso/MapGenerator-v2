@@ -18,9 +18,9 @@ public class Path {
 
     private final int id;
 
-    private boolean elevator;
+    private boolean elevator = false;
 
-    private boolean stair;
+    private boolean stair = false;
 
     private String identifier = "";
 

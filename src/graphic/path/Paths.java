@@ -33,9 +33,10 @@ public class Paths extends ArrayList<Path> {
         if (drawingPath != null)
             drawingPath.draw(g2, drawingPath);
 
-        for (Path p : this)
-            if (!(p.isElevator() || p.isStair()))
-                p.draw(g2, selectedPath);
+        for (Path p : this) {
+            //   if (!(p.isElevator() || p.isStair()))
+            p.draw(g2, selectedPath);
+        }
     }
 
     public void setDrawingPath(Point p, ArrayList<Point> points) {
@@ -63,6 +64,7 @@ public class Paths extends ArrayList<Path> {
     public void saveDrawingPath(Point a, ArrayList<Point> points) {
 
         Point found = null;
+
         for (Point tp : points)
             if (tp.isNear(a)) {
                 found = tp;
@@ -77,10 +79,13 @@ public class Paths extends ArrayList<Path> {
         else
             drawingPath.setA(a);
 
+        myJPanel.toJS.debug("" + drawingPath.isLengthEnougth());
 
-        if (drawingPath.isLengthEnougth())
+        if (drawingPath.isLengthEnougth()) {
             // verifico che non ci siano incroci
             testCross(drawingPath, points);
+            myJPanel.toJS.debug(this.size() + "");
+        }
 
         drawingPath = null;
     }
@@ -145,7 +150,7 @@ public class Paths extends ArrayList<Path> {
 
         // caso base, non interseca nessuna path
         if (found.size() == 0) {
-
+            myJPanel.toJS.debug("0");
             if (!points.contains(path.getP()))
                 points.add(path.getP());
 

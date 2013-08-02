@@ -45,14 +45,12 @@ abstract class MyMouseListeners extends MyJComponent implements MouseListener, M
 
             jPanelImmagine.toJS.sendMarker(jPanelImmagine.getMarkers().getSelected());
 
-            arg0.consume();
             jPanelImmagine.updatePanel();
 
-        } else {
-            MouseEvent arg = new MouseEvent(arg0.getComponent(), arg0.getID(), arg0.getWhen(), arg0.getModifiersEx(), point.getPanelPosition_X(), point.getPanelPosition_Y(), arg0.getClickCount(), arg0.isPopupTrigger());
-            jPanelImmagine.mouseClicked(arg);
-        }
+        } else
+            jPanelImmagine.mouseClicked(buildNewEvent(arg0, point.getPanelPosition_X(), point.getPanelPosition_Y()));
 
+        arg0.consume();
     }
 
 
@@ -88,20 +86,13 @@ abstract class MyMouseListeners extends MyJComponent implements MouseListener, M
     @Override
     public void mouseDragged(MouseEvent arg0) {
 
+        Point p = calculateRelativePointPosition(arg0.getPoint());
+
         if (jPanelImmagine.isMarkerType() && moveMarker) {
-            Point p = arg0.getPoint();
-
-            jPanelImmagine.toJS.debug("ARG0: " + p.x + " " + p.y + "\nPOINT: " + point.getPanelPosition_X() + " " + point.getPanelPosition_Y());
-
-            p.x += point.getPanelPosition_X() - DIAMETER / 2;
-            p.y += point.getPanelPosition_Y() - DIAMETER / 2;
-
-            jPanelImmagine.toJS.debug("NEW ARG0: " + p.x + " " + p.y);
 
             if (zoomManager.isPointOnImage(p)) {
 
                 objects.Point tp = new objects.Point(jPanelImmagine.getId(), p.x, p.y, jPanelImmagine.getFloor(), zoomManager);
-                jPanelImmagine.toJS.debug("NEW POINT: " + tp.getPanelPosition_X() + " " + tp.getPanelPosition_Y());
 
                 for (objects.Point otp : jPanelImmagine.getPoints()) {
                     if (otp.isNear(tp) && (otp != point)) {
@@ -127,26 +118,44 @@ abstract class MyMouseListeners extends MyJComponent implements MouseListener, M
 
             }
             jPanelImmagine.updatePanel();
-            arg0.consume();
-        }
+
+        } else
+            jPanelImmagine.mouseDragged(buildNewEvent(arg0, (int) p.getX(), (int) p.getY()));
+
+        arg0.consume();
     }
 
 
+    private Point calculateRelativePointPosition(Point p) {
+        p.x += point.getPanelPosition_X() - DIAMETER / 2;
+        p.y += point.getPanelPosition_Y() - DIAMETER / 2;
+
+        return p;
+    }
+
     @Override
     public void mousePressed(MouseEvent arg0) {
-        if (jPanelImmagine.isMarkerType()) {
+        if (jPanelImmagine.isMarkerType())
             moveMarker = true;
-            arg0.consume();
-        }
+
+        else
+            jPanelImmagine.mousePressed(buildNewEvent(arg0, point.getPanelPosition_X(), point.getPanelPosition_Y()));
+
+        arg0.consume();
     }
 
     @Override
     public void mouseReleased(MouseEvent arg0) {
 
-        if (jPanelImmagine.isMarkerType()) {
+        if (jPanelImmagine.isMarkerType())
             moveMarker = false;
-            arg0.consume();
+        else {
+            Point p = calculateRelativePointPosition(arg0.getPoint());
+            jPanelImmagine.mouseReleased(buildNewEvent(arg0, (int) p.getX(), (int) p.getY()));
         }
+
+        arg0.consume();
+
     }
 
 
@@ -154,4 +163,7 @@ abstract class MyMouseListeners extends MyJComponent implements MouseListener, M
     public void mouseMoved(MouseEvent arg0) {
     }
 
+    private MouseEvent buildNewEvent(MouseEvent arg0, int new_x, int new_y) {
+        return new MouseEvent(arg0.getComponent(), arg0.getID(), arg0.getWhen(), arg0.getModifiers(), new_x, new_y, arg0.getClickCount(), arg0.isPopupTrigger());
+    }
 }

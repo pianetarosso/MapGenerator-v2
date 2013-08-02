@@ -179,7 +179,7 @@ public class MyJPanel extends JPanel implements Constants {
         return type.equals(TYPE_MARKER);
     }
 
-    boolean isPathType() {
+    public boolean isPathType() {
         return type.equals(TYPE_PATH);
     }
 

@@ -123,6 +123,7 @@ public class JPanelImmagine extends MyJPanel implements MouseListener, MouseMoti
 
         if (isMarkerType())
             MarkerListener(arg0);
+
         else if (isPathType())
             pathListener(arg0, mouseClicked);
     }
